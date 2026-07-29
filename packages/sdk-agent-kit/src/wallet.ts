@@ -11,26 +11,34 @@ export interface ProvaWalletOptions {
   onError?: (error: unknown) => void;
 }
 
-export class ProvaWallet implements HostWallet {
-  private readonly inner: HostWallet;
+export class ProvaWallet<W extends HostWallet = HostWallet> implements HostWallet {
+  private readonly inner: W;
   private readonly attester: ProvaAttester;
   private readonly batcher: Batcher;
 
-  constructor(inner: HostWallet, options: ProvaWalletOptions) {
+  constructor(inner: W, options: ProvaWalletOptions) {
     this.inner = inner;
     this.attester = options.attester;
     this.batcher = createBatcher(options.attester, options.batch, options.onError);
   }
 
-  get publicKey(): { toBase58(): string } {
+  /**
+   * Delega el `publicKey` del wallet envuelto CONSERVANDO su tipo real
+   * (`W['publicKey']`, p. ej. el `PublicKey` completo de web3.js). Antes exponía
+   * solo `{ toBase58() }`, lo que obligaba a castear al pasar el ProvaWallet a
+   * `SolanaAgentKit` (hallazgo reportado por un integrador real, jul-2026).
+   */
+  get publicKey(): W['publicKey'] {
     return this.inner.publicKey;
   }
 
-  signTransaction<T>(transaction: T): Promise<T> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- espejo de HostWallet
+  signTransaction(transaction: unknown): Promise<any> {
     return this.inner.signTransaction(transaction);
   }
 
-  signAllTransactions<T>(transactions: T[]): Promise<T[]> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- espejo de HostWallet
+  signAllTransactions(transactions: unknown[]): Promise<any[]> {
     return this.inner.signAllTransactions(transactions);
   }
 
@@ -38,7 +46,7 @@ export class ProvaWallet implements HostWallet {
     return this.inner.signMessage(message);
   }
 
-  async signAndSendTransaction<T>(transaction: T, options?: unknown): Promise<{ signature: string }> {
+  async signAndSendTransaction(transaction: unknown, options?: unknown): Promise<{ signature: string }> {
     const result = await this.inner.signAndSendTransaction(transaction, options);
     // Atestación NO bloqueante de la firma on-chain real.
     void this.captureSignature(result.signature).catch(() => {});

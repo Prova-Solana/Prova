@@ -14,7 +14,7 @@ export interface ProvaHandle {
   stop(): Promise<void>;
 }
 
-export function attachProva(agent: HostAgent, options: AttachProvaOptions): ProvaHandle {
+export function attachProva<A extends HostAgent>(agent: A, options: AttachProvaOptions): ProvaHandle {
   const { attester } = options;
   const should = options.rules ?? (() => true);
   const onError =
@@ -26,7 +26,12 @@ export function attachProva(agent: HostAgent, options: AttachProvaOptions): Prov
     onError(error, { action: 'batch' }),
   );
 
-  agent.actions = agent.actions.map((action: HostAction): HostAction => {
+  // Vista estructural del agente (misma referencia → la reasignación de
+  // `actions` es visible en el SolanaAgentKit real). El genérico `A` permite
+  // pasar el agente real sin castear; el `Action` cerrado de SAK ya es
+  // asignable a `HostAction` (ver types.ts).
+  const host: HostAgent = agent;
+  host.actions = host.actions.map((action: HostAction): HostAction => {
     if (!should(action.name)) return action;
     const original = action.handler;
     return {

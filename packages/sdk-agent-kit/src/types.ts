@@ -6,25 +6,40 @@
 /** Resultado típico del handler de una acción de SAK. */
 export type ActionResult = Record<string, unknown>;
 
-/** Acción de Solana Agent Kit (subconjunto que el adapter necesita). */
+/**
+ * Acción de Solana Agent Kit (subconjunto que el adapter necesita).
+ * `handler` usa `any` en los parámetros a propósito: el `Action` real de SAK es
+ * una interfaz cerrada con tipos concretos de agente/input, y solo `any` permite
+ * que ese tipo cerrado sea asignable a `HostAction` SIN que el integrador tenga
+ * que castear (`as never`). Sin index signature — bloqueaba pasar el `Action`
+ * cerrado de SAK (hallazgo reportado por un integrador real, jul-2026).
+ */
 export interface HostAction {
   name: string;
-  handler: (agent: unknown, input: Record<string, unknown>) => Promise<ActionResult>;
-  [key: string]: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- límite estructural con el Action cerrado de SAK
+  handler: (agent: any, input: any) => Promise<ActionResult>;
 }
 
 /** Agente de Solana Agent Kit (subconjunto que el adapter necesita). */
 export interface HostAgent {
   actions: HostAction[];
-  [key: string]: unknown;
 }
 
-/** BaseWallet de Solana Agent Kit v2, en forma estructural. */
+/**
+ * BaseWallet de Solana Agent Kit v2, en forma estructural.
+ * Los métodos de transacción son NO genéricos a propósito: el `BaseWallet` real
+ * usa `signTransaction<T extends Transaction | VersionedTransaction>`, y un
+ * genérico restringido no es asignable a uno sin restringir — declarar genéricos
+ * aquí obligaba al integrador a castear (`as never`). Con parámetros `unknown` y
+ * retorno `any`, un `KeypairWallet` real encaja sin cast en ambas direcciones.
+ */
 export interface HostWallet {
   readonly publicKey: { toBase58(): string };
-  signTransaction<T>(transaction: T): Promise<T>;
-  signAllTransactions<T>(transactions: T[]): Promise<T[]>;
-  signAndSendTransaction<T>(transaction: T, options?: unknown): Promise<{ signature: string }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- covarianza con el BaseWallet de SAK
+  signTransaction(transaction: unknown): Promise<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- covarianza con el BaseWallet de SAK
+  signAllTransactions(transactions: unknown[]): Promise<any[]>;
+  signAndSendTransaction(transaction: unknown, options?: unknown): Promise<{ signature: string }>;
   signMessage(message: Uint8Array): Promise<Uint8Array>;
 }
 
