@@ -46,34 +46,46 @@ const content = {
 import { WasiAI } from '@wasiai/sdk';
 import { Keypair } from '@solana/web3.js';
 
-const wasi = new WasiAI({ apiKey: process.env.WASIAI_API_KEY });
+const wasi = new WasiAI({
+  apiKey: process.env.WASIAI_API_KEY,
+});
 
-// wasiai manages one Solana devnet keypair per agent — the end user never sees it
+// wasiai manages one Solana devnet keypair
+// per agent — end user never sees it
 const prova = new ProvaClient({
-  rpcUrl: process.env.SOLANA_RPC_URL,   // Helius devnet recommended
-  agentKeypair: Keypair.fromSecretKey(agentSecretKey),
+  // Helius devnet recommended
+  rpcUrl: process.env.SOLANA_RPC_URL,
+  agentKeypair: Keypair.fromSecretKey(secret),
 });`,
       },
       {
         step: '03',
         title: 'Seal every invocation',
-        code: `// Invoke the agent on wasiai, then anchor the receipt on Solana
+        code: `// Invoke agent on wasiai, anchor on Solana
 export async function invokeWithProva(slug, input) {
-  const res = await wasi.agents.invoke(slug, input);   // real call (Avalanche)
+  // real call (Avalanche)
+  const res = await wasi.agents.invoke(slug, input);
 
   const actionHash = await ProvaClient.hashAction(
-    JSON.stringify({ slug, input, output: res.output,
-                     receipt: res.metadata?.receiptSignature })
+    JSON.stringify({
+      slug,
+      input,
+      output: res.output,
+      receipt: res.metadata?.receiptSignature,
+    })
   );
 
-  prova.attest({                    // fire-and-forget — never blocks the agent
+  // fire-and-forget — never blocks agent
+  prova.attest({
     operatorKeypair,
     actionHash,
     actionType: 'ToolCall',
-    privacyMode: true,              // Vanish: private data, public fingerprint
-  }).catch((e) => console.warn('[prova] non-blocking attest failed:', e));
+    privacyMode: true, // Vanish mode
+  }).catch((e) =>
+    console.warn('[prova] attest failed:', e)
+  );
 
-  return res;                       // user gets the response without waiting
+  return res;
 }`,
       },
       {
@@ -94,15 +106,17 @@ await prova.batchAttest({
     forTitle: 'Prove what happened. Catch a lie.',
     forDesc:
       'The hash is a fingerprint of the action. The fingerprint lives on-chain — immutable, timestamped. To verify, re-hash the real data and compare.',
-    forCode: `// Does the claimed data match the immutable on-chain fingerprint?
-const expected = await ProvaClient.hashAction(JSON.stringify(claimedData));
+    forCode: `// Does claimed data match on-chain hash?
+const expected = await ProvaClient.hashAction(
+  JSON.stringify(claimedData)
+);
 
 const receipt = await fetch(
   \`https://prova-api.fly.dev/api/v1/attestations/\${pda}\`
 ).then((r) => r.json());
 
 const authentic = receipt.actionHash === expected;
-// true  → exactly what the agent did, untouched
+// true  → agent action untouched
 // false → altered / someone is lying`,
     forLinks: 'Explore live receipts in the forensic explorer, or pull the full history via the API.',
 
@@ -178,34 +192,46 @@ const authentic = receipt.actionHash === expected;
 import { WasiAI } from '@wasiai/sdk';
 import { Keypair } from '@solana/web3.js';
 
-const wasi = new WasiAI({ apiKey: process.env.WASIAI_API_KEY });
+const wasi = new WasiAI({
+  apiKey: process.env.WASIAI_API_KEY,
+});
 
-// wasiai gestiona una llave devnet de Solana por agente — el usuario final no la ve
+// wasiai gestiona una llave devnet de Solana
+// por agente — el usuario final no la ve
 const prova = new ProvaClient({
-  rpcUrl: process.env.SOLANA_RPC_URL,   // Helius devnet recomendado
-  agentKeypair: Keypair.fromSecretKey(agentSecretKey),
+  // Helius devnet recomendado
+  rpcUrl: process.env.SOLANA_RPC_URL,
+  agentKeypair: Keypair.fromSecretKey(secret),
 });`,
       },
       {
         step: '03',
         title: 'Sella cada invocación',
-        code: `// Invoca el agente en wasiai y ancla el recibo en Solana
+        code: `// Invoca agente en wasiai y ancla en Solana
 export async function invokeWithProva(slug, input) {
-  const res = await wasi.agents.invoke(slug, input);   // llamada real (Avalanche)
+  // llamada real (Avalanche)
+  const res = await wasi.agents.invoke(slug, input);
 
   const actionHash = await ProvaClient.hashAction(
-    JSON.stringify({ slug, input, output: res.output,
-                     receipt: res.metadata?.receiptSignature })
+    JSON.stringify({
+      slug,
+      input,
+      output: res.output,
+      receipt: res.metadata?.receiptSignature,
+    })
   );
 
-  prova.attest({                    // fire-and-forget — no bloquea al agente
+  // fire-and-forget — no bloquea al agente
+  prova.attest({
     operatorKeypair,
     actionHash,
     actionType: 'ToolCall',
-    privacyMode: true,              // Vanish: dato privado, huella pública
-  }).catch((e) => console.warn('[prova] attest no-bloqueante falló:', e));
+    privacyMode: true, // Vanish: huella pública
+  }).catch((e) =>
+    console.warn('[prova] attest falló:', e)
+  );
 
-  return res;                       // el usuario recibe su respuesta sin esperar
+  return res;
 }`,
       },
       {
@@ -226,15 +252,17 @@ await prova.batchAttest({
     forTitle: 'Prueba qué pasó. Atrapa una mentira.',
     forDesc:
       'El hash es la huella digital de la acción. La huella vive on-chain — inmutable, con timestamp. Para validar, recomputas la huella del dato real y comparas.',
-    forCode: `// ¿El dato que se afirma coincide con la huella inmutable on-chain?
-const expected = await ProvaClient.hashAction(JSON.stringify(claimedData));
+    forCode: `// ¿El dato coincide con la huella on-chain?
+const expected = await ProvaClient.hashAction(
+  JSON.stringify(claimedData)
+);
 
 const receipt = await fetch(
   \`https://prova-api.fly.dev/api/v1/attestations/\${pda}\`
 ).then((r) => r.json());
 
 const authentic = receipt.actionHash === expected;
-// true  → exactamente lo que el agente hizo, intacto
+// true  → lo que el agente hizo, intacto
 // false → alterado / alguien miente`,
     forLinks: 'Explora recibos en vivo en el explorer forense, o recupera la historia completa vía la API.',
 
@@ -310,34 +338,46 @@ const authentic = receipt.actionHash === expected;
 import { WasiAI } from '@wasiai/sdk';
 import { Keypair } from '@solana/web3.js';
 
-const wasi = new WasiAI({ apiKey: process.env.WASIAI_API_KEY });
+const wasi = new WasiAI({
+  apiKey: process.env.WASIAI_API_KEY,
+});
 
-// wasiai 为每个智能体管理一个 Solana devnet 密钥——终端用户看不到
+// wasiai 为每个智能体管理一个 devnet 密钥
+// 终端用户看不到
 const prova = new ProvaClient({
-  rpcUrl: process.env.SOLANA_RPC_URL,   // 推荐 Helius devnet
-  agentKeypair: Keypair.fromSecretKey(agentSecretKey),
+  // 推荐 Helius devnet
+  rpcUrl: process.env.SOLANA_RPC_URL,
+  agentKeypair: Keypair.fromSecretKey(secret),
 });`,
       },
       {
         step: '03',
         title: '封存每次调用',
-        code: `// 在 wasiai 上调用智能体，然后在 Solana 上锚定回执
+        code: `// 在 wasiai 上调用智能体，在 Solana 上锚定
 export async function invokeWithProva(slug, input) {
-  const res = await wasi.agents.invoke(slug, input);   // 真实调用（Avalanche）
+  // 真实调用（Avalanche）
+  const res = await wasi.agents.invoke(slug, input);
 
   const actionHash = await ProvaClient.hashAction(
-    JSON.stringify({ slug, input, output: res.output,
-                     receipt: res.metadata?.receiptSignature })
+    JSON.stringify({
+      slug,
+      input,
+      output: res.output,
+      receipt: res.metadata?.receiptSignature,
+    })
   );
 
-  prova.attest({                    // 发送即忘——不阻塞智能体
+  // 发送即忘——不阻塞智能体
+  prova.attest({
     operatorKeypair,
     actionHash,
     actionType: 'ToolCall',
-    privacyMode: true,              // Vanish：私有数据，公开指纹
-  }).catch((e) => console.warn('[prova] 非阻塞存证失败:', e));
+    privacyMode: true, // Vanish 模式
+  }).catch((e) =>
+    console.warn('[prova] 存证失败:', e)
+  );
 
-  return res;                       // 用户无需等待即可获得响应
+  return res;
 }`,
       },
       {
@@ -358,8 +398,10 @@ await prova.batchAttest({
     forTitle: '证明发生了什么。抓出谎言。',
     forDesc:
       '哈希是该动作的指纹。指纹存于链上——不可篡改、带时间戳。要验证时，对真实数据重新哈希并比对。',
-    forCode: `// 声称的数据是否与链上不可篡改的指纹一致？
-const expected = await ProvaClient.hashAction(JSON.stringify(claimedData));
+    forCode: `// 声称的数据是否与链上指纹一致？
+const expected = await ProvaClient.hashAction(
+  JSON.stringify(claimedData)
+);
 
 const receipt = await fetch(
   \`https://prova-api.fly.dev/api/v1/attestations/\${pda}\`
@@ -416,14 +458,14 @@ export function WasiaiContent() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
-      <div className="mx-auto max-w-7xl">
+    <div className="min-h-screen w-full min-w-0 overflow-x-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+      <div className="mx-auto max-w-7xl w-full min-w-0">
         {/* Hero */}
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
           <div>
             <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.tag}</p>
           </div>
-          <div>
+          <div className="w-full min-w-0">
             <h1 className="break-words font-display text-3xl min-[380px]:text-4xl uppercase leading-none tracking-tight text-foreground sm:text-6xl lg:text-7xl">
               <span className="text-foreground">{t.headline[0]}</span>{' '}
               <span className="text-muted-foreground">{t.headline[1]}</span>{' '}
@@ -435,18 +477,18 @@ export function WasiaiContent() {
         </div>
 
         {/* Fit — three layers */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.fitTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
                 {t.fitTitle}
               </h2>
             </div>
-            <div>
-              <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-3">
+            <div className="w-full min-w-0">
+              <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-3 w-full min-w-0">
                 {t.layers.map((l, i) => (
-                  <div key={l.k} className="bg-background p-5 sm:p-6">
+                  <div key={l.k} className="bg-background p-5 sm:p-6 min-w-0">
                     <span className="font-mono text-xs text-primary">{`0${i + 1}`}</span>
                     <p className="mt-3 font-display text-base uppercase text-foreground">{l.k}</p>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
@@ -464,19 +506,19 @@ export function WasiaiContent() {
         </section>
 
         {/* How it works */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.howTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
                 {t.howTitle}
               </h2>
             </div>
-            <ol className="border-t border-border">
+            <ol className="border-t border-border w-full min-w-0">
               {t.howSteps.map((s) => (
                 <li
                   key={s.n}
-                  className="grid gap-2 border-b border-border py-6 sm:py-8 lg:grid-cols-[auto_1fr] lg:gap-12"
+                  className="grid gap-2 border-b border-border py-6 sm:py-8 lg:grid-cols-[auto_1fr] lg:gap-12 w-full min-w-0"
                 >
                   <span className="font-mono text-xs text-primary">{s.n}</span>
                   <div className="min-w-0">
@@ -490,8 +532,8 @@ export function WasiaiContent() {
         </section>
 
         {/* Pilot code */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.codeTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
@@ -499,15 +541,15 @@ export function WasiaiContent() {
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">{t.codeNote}</p>
             </div>
-            <ol className="border-t border-border">
+            <ol className="border-t border-border w-full min-w-0">
               {t.steps.map((s) => (
-                <li key={s.step} className="border-b border-border py-6 sm:py-8">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-xs text-primary">{s.step}</span>
-                    <h3 className="font-display text-base uppercase text-foreground">{s.title}</h3>
+                <li key={s.step} className="border-b border-border py-6 sm:py-8 w-full min-w-0 overflow-hidden">
+                  <div className="flex items-baseline gap-4 min-w-0">
+                    <span className="font-mono text-xs text-primary shrink-0">{s.step}</span>
+                    <h3 className="font-display text-base uppercase text-foreground min-w-0 break-words">{s.title}</h3>
                   </div>
-                  <div className="mt-4 overflow-x-auto border border-border bg-surface p-4 sm:p-5">
-                    <pre className="font-mono text-[11px] min-[380px]:text-xs md:text-sm leading-relaxed text-primary/90 whitespace-pre overflow-x-auto scrollbar-thin">{s.code}</pre>
+                  <div className="mt-4 w-full min-w-0 overflow-x-auto border border-border bg-surface p-3.5 sm:p-5">
+                    <pre className="font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed text-primary/90 whitespace-pre-wrap sm:whitespace-pre break-words [word-break:break-word] sm:[word-break:normal] max-w-full overflow-x-auto scrollbar-thin">{s.code}</pre>
                   </div>
                 </li>
               ))}
@@ -516,8 +558,8 @@ export function WasiaiContent() {
         </section>
 
         {/* Forensics */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.forTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
@@ -525,9 +567,9 @@ export function WasiaiContent() {
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">{t.forDesc}</p>
             </div>
-            <div>
-              <div className="overflow-x-auto border border-border bg-surface p-4 sm:p-5">
-                <pre className="font-mono text-[11px] min-[380px]:text-xs md:text-sm leading-relaxed text-primary/90 whitespace-pre overflow-x-auto scrollbar-thin">{t.forCode}</pre>
+            <div className="w-full min-w-0 overflow-hidden">
+              <div className="w-full min-w-0 overflow-x-auto border border-border bg-surface p-3.5 sm:p-5">
+                <pre className="font-mono text-[11px] sm:text-xs md:text-sm leading-relaxed text-primary/90 whitespace-pre-wrap sm:whitespace-pre break-words [word-break:break-word] sm:[word-break:normal] max-w-full overflow-x-auto scrollbar-thin">{t.forCode}</pre>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.forLinks}</p>
             </div>
@@ -535,8 +577,8 @@ export function WasiaiContent() {
         </section>
 
         {/* Chains + phases */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.chainTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
@@ -544,9 +586,9 @@ export function WasiaiContent() {
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">{t.chainDesc}</p>
             </div>
-            <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-2">
+            <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-2 w-full min-w-0">
               {t.phases.map((p) => (
-                <div key={p.k} className="bg-background p-5 sm:p-6">
+                <div key={p.k} className="bg-background p-5 sm:p-6 min-w-0">
                   <p className="font-pixel text-[12px] uppercase tracking-wider text-primary">{p.k}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.d}</p>
                 </div>
@@ -556,17 +598,17 @@ export function WasiaiContent() {
         </section>
 
         {/* Guardrails */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.notTag}</p>
               <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl">
                 {t.notTitle}
               </h2>
             </div>
-            <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-px border border-border bg-border grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full min-w-0">
               {t.nots.map((n) => (
-                <div key={n.t} className="bg-background p-5 sm:p-6">
+                <div key={n.t} className="bg-background p-5 sm:p-6 min-w-0">
                   <p className="font-display text-sm uppercase text-foreground">{n.t}</p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{n.d}</p>
                 </div>
@@ -576,19 +618,19 @@ export function WasiaiContent() {
         </section>
 
         {/* Links */}
-        <section className="mt-16 sm:mt-24">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-20 w-full min-w-0">
             <div>
               <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.linksTag}</p>
             </div>
-            <div className="grid gap-px border border-border bg-border grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-px border border-border bg-border grid-cols-1 min-[480px]:grid-cols-2 lg:grid-cols-3 w-full min-w-0">
               {links.map((l) => (
                 <a
                   key={l.key}
                   href={l.href}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="group bg-background p-5 sm:p-6 transition-colors hover:bg-surface"
+                  className="group bg-background p-5 sm:p-6 transition-colors hover:bg-surface min-w-0"
                 >
                   <p className="font-pixel text-[12px] uppercase tracking-wider text-muted-foreground">
                     {t[l.key]}
@@ -604,8 +646,8 @@ export function WasiaiContent() {
         </section>
 
         {/* CTA */}
-        <section className="mt-16 sm:mt-24">
-          <div className="border border-border bg-surface p-6 sm:p-10 lg:p-12">
+        <section className="mt-16 sm:mt-24 w-full min-w-0">
+          <div className="border border-border bg-surface p-6 sm:p-10 lg:p-12 min-w-0 overflow-hidden">
             <p className="font-pixel text-[13px] uppercase tracking-wider text-primary">{t.ctaTag}</p>
             <h2 className="mt-3 font-display text-xl min-[380px]:text-2xl uppercase leading-tight text-foreground sm:text-3xl lg:text-4xl">
               {t.ctaTitle}
