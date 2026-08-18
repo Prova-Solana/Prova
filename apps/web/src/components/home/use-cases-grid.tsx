@@ -10,8 +10,8 @@ const content = {
       {
         icon: Scale,
         persona: 'Compliance',
-        title: 'Pass JARGUS & EU AI Act audits instantly',
-        desc: 'Map every autonomous action to strict regulatory frameworks. Export cryptographic PDF reports that Tier-1 auditors trust natively. (Note: JARGUS is an internal audit and does not substitute audits from top-tier firms).',
+        title: 'Pass EU AI Act audits instantly',
+        desc: 'Map every autonomous action to strict regulatory frameworks. Export cryptographic PDF reports that Tier-1 auditors trust natively.',
       },
       {
         icon: ShieldCheck,
@@ -40,8 +40,8 @@ const content = {
       {
         icon: Scale,
         persona: 'Cumplimiento',
-        title: 'Pasa auditorías JARGUS y EU AI Act al instante',
-        desc: 'Mapea cada acción autónoma a marcos regulatorios estrictos. Exporta reportes PDF criptográficos en los que los auditores Tier-1 confían nativamente. (Nota: JARGUS es una auditoría interna y no sustituye a las auditorías de firmas top-tier).',
+        title: 'Pasa auditorías EU AI Act al instante',
+        desc: 'Mapea cada acción autónoma a marcos regulatorios estrictos. Exporta reportes PDF criptográficos en los que los auditores Tier-1 confían nativamente.',
       },
       {
         icon: ShieldCheck,

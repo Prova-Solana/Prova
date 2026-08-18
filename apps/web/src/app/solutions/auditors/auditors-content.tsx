@@ -11,7 +11,6 @@ const content = {
     desc: "Pricing risk for autonomous systems is impossible without ground truth. Prova provides an immutable, transparent trail of every AI decision for deterministic underwriting.",
     benefits: [
       'Price agentic insurance policies using verifiable history',
-      'Conduct JARGUS internal pre-audits effortlessly',
       'Automate compliance checks via REST API & Webhooks',
       'Reduce audit cycles from quarters to days',
       'Real-time observability of autonomous system liabilities',
@@ -25,7 +24,6 @@ const content = {
     desc: 'Calcular el precio del riesgo de sistemas autónomos es imposible sin una verdad fundamental. Prova provee un rastro inmutable y transparente de cada decisión de la IA para suscripción determinista.',
     benefits: [
       'Cotiza pólizas de seguros para agentes usando historial verificable',
-      'Realiza pre-auditorías internas JARGUS sin esfuerzo',
       'Automatiza revisiones de cumplimiento vía API REST y Webhooks',
       'Reduce los ciclos de auditoría de trimestres a días',
       'Observabilidad en tiempo real de los pasivos del sistema autónomo',
@@ -39,7 +37,6 @@ const content = {
     desc: '如果没有基础事实，为自主系统定价风险是不可能的。Prova 为每一项 AI 决定提供不可篡改且透明的追踪，以实现确定性的承保。',
     benefits: [
       '使用可验证的历史记录为代理保险保单定价',
-      '轻松进行 JARGUS 内部预审计',
       '通过 REST API 和 Webhooks 自动化合规检查',
       '将审计周期从几个季度缩短到几天',
       '实时观察自主系统的责任风险',
@@ -88,7 +85,7 @@ export function AuditorsContent() {
             
             <div className="mt-8 border border-border p-4 text-xs text-muted-foreground">
               <p>
-                <strong>Disclaimer:</strong> JARGUS audits are internal and do not substitute audits from top-tier firms. Prova operates in full accordance with the Solana.org Developer Guidelines and the Solana Foundation Code of Conduct updated as of May 2026.
+                <strong>Note:</strong> Prova operates in full accordance with the Solana.org Developer Guidelines and the Solana Foundation Code of Conduct updated as of May 2026.
               </p>
             </div>
           </div>

@@ -12,7 +12,6 @@ const content = {
     benefits: [
       'Instant EU AI Act Article 12 (Record-Keeping) fulfillment',
       'Immutable Machine Payment Protocol (MPP) integration records',
-      'Pass JARGUS internal audits and accelerate top-tier firm reviews',
       'Compliant with Solana Foundation Code of Conduct (May 2026)',
       'Export cryptographically-sealed PDF compliance reports',
       'Enforce MetaComp KYA (Know Your Agent) policies programmatically',
@@ -27,7 +26,6 @@ const content = {
     benefits: [
       'Cumplimiento instantáneo del Artículo 12 del EU AI Act (Registro)',
       'Registros inmutables de integración con el Machine Payment Protocol (MPP)',
-      'Aprueba auditorías internas JARGUS y acelera revisiones de firmas top-tier',
       'Cumple con el Código de Conducta de la Solana Foundation (Mayo 2026)',
       'Exporta reportes de cumplimiento en PDF sellados criptográficamente',
       'Aplica políticas MetaComp KYA (Know Your Agent) programáticamente',
@@ -42,7 +40,6 @@ const content = {
     benefits: [
       '即刻满足欧盟 AI 法案第 12 条（记录保存）要求',
       '不可篡改的机器支付协议 (MPP) 集成记录',
-      '通过 JARGUS 内部审计并加速顶级公司审查',
       '符合 Solana 基金会行为准则（2026 年 5 月）',
       '导出带有密码学印记的 PDF 合规报告',
       '以编程方式强制执行 MetaComp KYA（了解您的代理）政策',
@@ -91,7 +88,7 @@ export function ComplianceContent() {
             
             <div className="mt-8 border border-border p-4 text-xs text-muted-foreground">
               <p>
-                <strong>Disclaimer:</strong> JARGUS audits are internal and do not substitute audits from top-tier firms. Prova operates in full accordance with the Solana.org Developer Guidelines and the Solana Foundation Code of Conduct updated as of May 2026.
+                <strong>Note:</strong> Prova operates in full accordance with the Solana.org Developer Guidelines and the Solana Foundation Code of Conduct updated as of May 2026.
               </p>
             </div>
           </div>

@@ -4,6 +4,14 @@ import { useI18n } from '@/components/i18n-provider';
 
 const releases = [
   {
+    version: '0.2.3',
+    date: '2026-08-17',
+    type: 'Fix',
+    notes: [
+      'Removed all "JARGUS" audit references site-wide — it was a self-issued internal audit label, not a third-party validation, and it should never have been presented alongside real regulatory frameworks like the EU AI Act',
+    ],
+  },
+  {
     version: '0.2.2',
     date: '2026-07-16',
     type: 'Feature',
@@ -40,7 +48,6 @@ const releases = [
       'Rust SDK published to crates.io (prova-agent-sdk v0.1.0)',
       'New Solutions portal: Compliance, Legal, Auditors',
       'New Developers portal: API & MCP Reference, Examples',
-      'Unified JARGUS internal audit disclaimers across all endpoints',
       'Removed all demo-mode stubs from frontend and SDK',
     ],
   },
