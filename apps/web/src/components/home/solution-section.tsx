@@ -6,7 +6,7 @@ const content = {
   EN: {
     sectionTitle: 'The Standard',
     headline: ['Forensic finality', 'for the Machine', 'Economy.'],
-    description: 'Prova issues cryptographic behavior attestations via the Solana Attestation Service. You get an enterprise-grade forensic trail designed to satisfy regulators, survive audits, and secure the Agentic Internet.',
+    description: 'Prova issues cryptographic behavior attestations via its own purpose-built Anchor program with native Ed25519 verification. You get an enterprise-grade forensic trail designed to satisfy regulators, survive audits, and secure the Agentic Internet.',
     features: [
       {
         icon: Shield,
@@ -35,7 +35,7 @@ const content = {
   ES: {
     sectionTitle: 'El Estándar',
     headline: ['Finalidad forense', 'para la Economía', 'de Máquinas.'],
-    description: 'Prova emite atestaciones de comportamiento criptográficas vía el Solana Attestation Service. Obtienes un rastro forense de grado empresarial diseñado para satisfacer a reguladores, sobrevivir auditorías y asegurar el Internet de Agentes.',
+    description: 'Prova emite atestaciones de comportamiento criptográficas vía su propio programa Anchor con verificación Ed25519 nativa. Obtienes un rastro forense de grado empresarial diseñado para satisfacer a reguladores, sobrevivir auditorías y asegurar el Internet de Agentes.',
     features: [
       {
         icon: Shield,
@@ -61,35 +61,6 @@ const content = {
     lines: '9 líneas',
     footer: 'Confirmación en sub-segundos · Compatible con MPP · Arquitectura Zero-ops'
   },
-  ZH: {
-    sectionTitle: '解决方案',
-    headline: ['为每一项', '操作提供', '一个签名收据。'],
-    description: 'Prova 通过 Solana Attestation Service 发布行为证明 —— 这是与链上身份使用的相同的基金会支持的基础协议。你将获得一份能够经受住审计、诉讼和下一次AI政策更新考验的法证轨迹。',
-    features: [
-      {
-        icon: Shield,
-        title: '由执行工作的代理签名',
-        description: '每份证明都带有代理密钥的 Ed25519 签名。没有共享秘密。没有伪造冒充。',
-      },
-      {
-        icon: Lock,
-        title: '一经上链，不可篡改',
-        description: '一旦登录 Solana，收据将无法被篡改、删除或倒填日期。你不能，我们也不能。',
-      },
-      {
-        icon: CheckCircle2,
-        title: '无需信任 Prova 即可验证',
-        description: '交易对手、监管机构和你自己的法律团队都可以直接在链上验证任何证明。',
-      },
-      {
-        icon: Network,
-        title: '原生 MCP 服务器 — Claude 和 Cursor 就绪',
-        description: '向你的 AI IDE 提问"代理 X 上周做了什么？"，即可获得经过验证的链上数据。兼容任何支持 MCP 的工具。',
-      },
-    ],
-    lines: '9 行',
-    footer: '无需排队 · 无需批处理 · 无需运行服务器'
-  }
 };
 
 const CODE = `import { ProvaClient, AttestationBuilder } from 'prova-agent-sdk';
@@ -104,7 +75,7 @@ const receipt = await client.attest(
 );
 
 console.log('Attested:', receipt.id);
-// → att_4Kf9...x2pQ — on-chain PDA, globally verifiable`;
+// → att_4Kf9...x2pQ — on-chain event, globally verifiable`;
 
 export function SolutionSection() {
   const { lang } = useI18n();

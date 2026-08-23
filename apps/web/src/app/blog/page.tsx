@@ -13,7 +13,7 @@ const posts = [
     readTime: '6 min',
   },
   {
-    title: 'Building on Solana Attestation Service: A Technical Deep-Dive',
+    title: "Prova's Attestation Architecture: A Technical Deep-Dive",
     date: '2026-05-05',
     category: 'Engineering',
     slug: 'sas-deep-dive',
@@ -38,11 +38,6 @@ const content = {
     tag: 'Blog',
     headline: ['Ingeniería,', 'producto e industria.'],
     read: 'lectura',
-  },
-  ZH: {
-    tag: '博客',
-    headline: ['工程、', '产品与行业。'],
-    read: '分钟阅读',
   },
 };
 

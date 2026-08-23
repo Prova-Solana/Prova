@@ -3,12 +3,10 @@ import { useI18n } from '../i18n-provider';
 
 const content = {
   EN: 'Built on the infra Solana operators already trust',
-  ES: 'Construido en la infraestructura en la que los operadores de Solana ya confían',
-  ZH: '构建于 Solana 运营商已经信赖的基础设施之上'
+  ES: 'Construido en la infraestructura en la que los operadores de Solana ya confían'
 };
 
 const partners = [
-  'Solana Attestation Service',
   'Helius LaserStream',
   'Vanish Core',
   'Coinbase x402',

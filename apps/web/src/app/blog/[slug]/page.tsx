@@ -40,11 +40,11 @@ const posts = {
       },
       {
         type: 'h2' as const,
-        text: 'Built on Solana Attestation Service',
+        text: 'Built on a purpose-built Anchor program',
       },
       {
         type: 'p' as const,
-        text: 'Prova is built on top of the Solana Attestation Service (SAS), the Foundation-backed standard for on-chain attestations. This means your attestations are not tied to Prova\'s infrastructure — they live on Solana forever, even if Prova shuts down tomorrow.',
+        text: 'Prova runs its own Anchor program on Solana, with native Ed25519 signature verification, rather than routing through a generic attestation service. This means your attestations are not tied to Prova\'s off-chain infrastructure — they live on Solana forever, even if Prova shuts down tomorrow.',
       },
       {
         type: 'p' as const,
@@ -53,14 +53,14 @@ const posts = {
     ],
   },
   'sas-deep-dive': {
-    title: 'Building on Solana Attestation Service: A Technical Deep-Dive',
+    title: "Prova's Attestation Architecture: A Technical Deep-Dive",
     date: '2026-05-05',
     category: 'Engineering',
     readTime: '10 min read',
     content: [
       {
         type: 'p' as const,
-        text: "Solana Attestation Service (SAS) is a Solana Foundation initiative to standardize the way identity claims and verifiable credentials are anchored on-chain. In this post we'll walk through how Prova's Anchor program wraps SAS primitives to create behavior-specific attestations for AI agents.",
+        text: "Prova runs its own purpose-built Anchor program on Solana — not a wrapper around a generic attestation service. In this post we'll walk through how that program creates behavior-specific attestations for AI agents, from signature to indexed receipt.",
       },
       {
         type: 'h2' as const,
