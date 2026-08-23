@@ -33,20 +33,6 @@ const content = {
     getStarted: 'Leer Arquitectura',
     viewPricing: 'Contáctanos'
   },
-  ZH: {
-    tag: '解决方案',
-    title: '面向法律专业人士',
-    desc: '当 AI 代理执行交易时，传统日志只是传闻证据。Prova 的链上证明提供了法庭可采信的密码学密封证据。',
-    benefits: [
-      '原生符合 FRE 901 法庭证据采信标准',
-      '使用不可篡改的数据对抗代理责任索赔',
-      '减少技术纠纷中对专家证人的依赖',
-      '确切证明模型在何时做出了何种决定',
-      '针对机器支付协议提供透明的冲突解决机制',
-    ],
-    getStarted: '阅读架构',
-    viewPricing: '联系我们'
-  }
 };
 
 export function LegalContent() {

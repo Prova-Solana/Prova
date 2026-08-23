@@ -100,39 +100,4 @@ export const pluginEliza: LocalizedDoc = {
       },
     ],
   },
-  ZH: {
-    title: 'elizaOS 插件',
-    intro:
-      '`prova-plugin-eliza` 是将 Prova 连接到 elizaOS 代理的官方插件。您的角色执行的每个操作都会在 Solana 上获得一个可验证的、经过 Ed25519 签名的收据，而无需触及您的代理逻辑。',
-    blocks: [
-      { kind: 'h2', text: '工作原理' },
-      {
-        kind: 'list',
-        items: [
-          '在初始化时，插件会拦截每个已注册角色操作的 handler，并挂钩到运行时操作管道中。',
-          '在每个 handler 解析后，插件会将操作名称、消息内容和结果哈希化 (SHA-256) 并将证明加入队列。',
-          '证明通过防抖自动批量处理，在一次交易中写入最多 100 条收据，从而消除租金成本。',
-          '该插件在链下通过结构化类型工作，确保从不直接导入 `@elizaos/core`，从而保持轻量且跨版本兼容。',
-        ],
-      },
-      { kind: 'h2', text: '安装' },
-      { kind: 'code', code: installCode },
-      { kind: 'h2', text: '快速上手' },
-      { kind: 'code', code: quickStartCode },
-      { kind: 'h2', text: '关机控制' },
-      { kind: 'code', code: shutdownCode },
-      { kind: 'h2', text: '选项' },
-      {
-        kind: 'table',
-        headers: ['选项', '默认值', '说明'],
-        rows: [
-          ['`attester`', '—', '通往 Prova 的桥。用 `attesterFromProvaClient(client, hashAction, operatorKeypair)` 构建。'],
-          ['`rules`', '全部证明', '按操作名称过滤谓词 — 返回 `false` 跳过证明该操作。'],
-          ['`batch.maxSize`', '`25`', '队列达到 N 条时立即发送（每笔交易 1–100 条）。'],
-          ['`batch.flushDelayMs`', '`1000`', '防抖时间（毫秒）。将一连串工具调用缓冲入同一笔交易。'],
-          ['`onError`', '控制台警告', '证明失败时调用；代理操作本身不受影响。'],
-        ],
-      },
-    ],
-  },
 };

@@ -25,16 +25,6 @@ const content = {
     docsLabel: 'Documentación',
     getStarted: 'Leer Docs del SDK',
   },
-  ZH: {
-    tag: '产品',
-    title: '代理 SDK',
-    desc: '提供 TypeScript 和 Rust SDK，以便将 Prova 轻松集成到您的 AI 代理中。为 elizaOS、Anchor 和标准 REST 架构原生构建。',
-    packagesLabel: '包',
-    ts: 'TypeScript / Node.js',
-    rs: 'Rust',
-    docsLabel: '文档',
-    getStarted: '阅读 SDK 文档',
-  },
 };
 
 export function SdkContent() {

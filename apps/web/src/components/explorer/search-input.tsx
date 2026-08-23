@@ -34,12 +34,6 @@ const content = {
     loadingBtn: 'Cargando…',
     detected: 'detectado:'
   },
-  ZH: {
-    placeholder: '通过交易签名、代理公钥或操作员地址搜索…',
-    searchBtn: '搜索',
-    loadingBtn: '加载中…',
-    detected: '检测到：'
-  }
 };
 
 export function SearchInput() {

@@ -57,32 +57,6 @@ const content = {
       }
     }
   },
-  ZH: {
-    tag: '参考',
-    title: 'API 与 MCP 参考',
-    desc: '将 Prova REST API 集成到您的后端，或使用模型上下文协议 (MCP) 让您的 LLM 原生读取证明。',
-    sections: {
-      rest: {
-        title: 'REST API',
-        content: [
-          'REST API 提供对索引 Solana 状态的只读访问。它托管在 Fly.io 上，并确保 99.99% 的正常运行时间。',
-          '• 基础 URL: https://prova-api.fly.dev/api/v1',
-          '• GET /attestations - 列出最近的代理证明（分页）',
-          '• GET /agents/:id - 检索特定代理的指标和策略',
-          '• GET /health - 检查索引器和 RPC 同步状态'
-        ]
-      },
-      mcp: {
-        title: '模型上下文协议 (MCP)',
-        content: [
-          'Prova 提供官方 MCP 服务器（npm：prova-mcp-server）。它让 Claude、Cursor 和任何兼容 MCP 的客户端直接在上下文窗口中查询经过验证的链上证明 — Claude Code：claude mcp add prova -- npx -y prova-mcp-server。',
-          '对于 Claude Desktop 或 Cursor，请将以下内容添加到您的 MCP 配置中（claude_desktop_config.json / .cursor/mcp.json）：',
-          '{\n  "mcpServers": {\n    "prova": {\n      "command": "npx",\n      "args": ["-y", "prova-mcp-server"]\n    }\n  }\n}',
-          '这会向您的模型暴露 9 个工具 — 包括 `list_attestations`、`get_agent_stats` 和 `verify_action_hash`（重新计算负载的 SHA-256 并与链上哈希比对）。在 env 块中设置 PROVA_API_KEY 可解锁高级工具（`get_full_history`、`get_forensic_report`、`bulk_verify`）。完整指南见文档 → MCP 服务器。'
-        ]
-      }
-    }
-  }
 };
 
 export function ApiContent() {

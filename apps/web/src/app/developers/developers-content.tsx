@@ -77,42 +77,6 @@ const content = {
       },
     ]
   },
-  ZH: {
-    tag: '开发者',
-    headline: ['包装代理操作。', '获得一个', '在任何情况下都能存活的收据。'],
-    desc: '免费、开源的 TypeScript SDK。无专有运行环境，无供应商锁定——这只是一个对 Solana 证明服务的轻量封装。',
-    quickStart: '打开快速入门',
-    github: '在 GitHub 上标星',
-    installTag: '安装',
-    installTitle: '从 npm 到链上收据只需五行。',
-    tsTag: 'TypeScript / JavaScript',
-    resources: [
-      {
-        n: '01',
-        icon: BookOpen,
-        title: '快速入门',
-        desc: '从 npm install 到经过验证的链上收据只需五行代码。',
-        href: '/developers/quick-start',
-        cta: '打开快速入门',
-      },
-      {
-        n: '02',
-        icon: Code2,
-        title: 'API 与 MCP 参考',
-        desc: '每一个接口，都有使用您自己的密钥驱动的测试控制台。包含用于 AI IDE 的原生 MCP 服务器。',
-        href: '/developers/docs',
-        cta: '浏览 API 与 MCP',
-      },
-      {
-        n: '03',
-        icon: Puzzle,
-        title: 'SDK 参考',
-        desc: '五个包：核心 SDK、Solana Agent Kit 适配器、elizaOS 插件、MCP 服务器、Rust crate。',
-        href: '/developers/sdks',
-        cta: '查看 SDK',
-      },
-    ]
-  }
 };
 
 export function DevelopersContent() {

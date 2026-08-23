@@ -27,18 +27,6 @@ const content = {
     ],
     communityLabel: 'Comunidad',
   },
-  ZH: {
-    tag: '联系我们',
-    headline: ['联系我们。'],
-    desc: '有问题、合作想法或企业咨询？我们很乐意倾听。',
-    channels: [
-      { label: '通用',      email: 'xvaiosx7@gmail.com' },
-      { label: '安全',      email: 'xvaiosx7@gmail.com' },
-      { label: '企业销售',  email: 'xvaiosx7@gmail.com' },
-      { label: '媒体',      email: 'xvaiosx7@gmail.com' },
-    ],
-    communityLabel: '社区',
-  },
 };
 
 export default function ContactPage() {

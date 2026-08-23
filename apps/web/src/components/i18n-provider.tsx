@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-export type Language = 'EN' | 'ES' | 'ZH';
+export type Language = 'EN' | 'ES';
 
 interface I18nContextType {
   lang: Language;
@@ -141,71 +141,6 @@ const translations = {
     cancel: 'Cancelar',
     logout: 'Desconectar'
   },
-  ZH: {
-    home: '首页',
-    product: '产品',
-    explorer: '浏览器',
-    developers: '开发者',
-    solutions: '解决方案',
-    pricing: '定价',
-    docs: '文档',
-    blog: '博客',
-    registerAgent: '注册代理',
-    startBuilding: '开始构建',
-    live: '实时',
-    shippedThisWeek: 'v0.1.7 已发布到 npm →',
-    heroTitle1: '为每个',
-    heroTitle2: '自主 AI 代理',
-    heroTitle3: '打造的',
-    heroTitle4: '法证级',
-    heroTitle5: '结算层。',
-    heroDesc1: 'Prova 为你的代理的每一笔交易、API 调用和决策写入加密的链上收据 — ',
-    heroDesc2: ' 凭借 Solana 亚秒级、低于一美分的最终确认特性，解锁无须信任的企业级采用。',
-    shipFirst: '发布您的第一个证明',
-    seeFeed: '查看全球动态',
-    finality: '最终确认',
-    perReceipt: '单据成本',
-    openSource: '开源',
-    native: '原生',
-    feedFooter: '不可篡改的链上收据 · 来自 devnet · 密码学级验证 →',
-    liveAttestations: '实时证明',
-    thisSession: '本会话',
-    total: '总计',
-    liveOnDevnet: 'devnet 实时运行中',
-    awaitingActivity: '等待代理活动',
-    noAttestationsYet: 'devnet 上还没有 AI 证明。',
-    openExplorer: '打开 Prova 浏览器 →',
-    sAgo: '秒前',
-    mAgo: '分钟前',
-    hAgo: '小时前',
-    productPageTitle: '产品',
-    productHeadline1: '自主的 AI 决策',
-    productHeadline2: '是如何',
-    productHeadline3: '变成法证级',
-    productHeadline4: '证据的。',
-    productDesc: '深入了解代理互联网架构的四个核心部分。专为 AI 工程师、安全研究人员和企业合规团队设计。',
-    tagCore: '核心',
-    tagDevelopers: '开发者',
-    tagTrust: '信任',
-    tagCompliance: '合规',
-    titleHowItWorks: '工作原理',
-    titleSdk: '代理 SDK',
-    titleSecurity: '安全性',
-    titlePrivacyMode: '隐私模式',
-    descHowItWorks: '架构、机器支付协议 (MPP) 集成，以及从代理意图到不可篡改链上收据的序列图。',
-    descSdk: 'TypeScript SDK 参考 — 链上 ProvaClient + REST API。专为 elizaOS 和 Solana 原生代理构建。',
-    descSecurity: 'STRIDE 威胁模型、密码学托管和企业级漏洞赏金。',
-    descPrivacyMode: '使用 Vanish Core 进行选择性披露。证明 AI 操作已执行，而不会泄露专有提示词 (Prompts)。',
-    connectWallet: '连接钱包',
-    connecting: '连接中...',
-    emailLogin: '邮箱登录',
-    emailLoginTitle: '企业登录',
-    emailLoginDesc: 'Phantom Connect / Privy 嵌入式钱包流程已启动。输入您的企业邮箱，即刻生成安全的非托管钱包。',
-    emailPlaceholder: 'you@enterprise.com',
-    continueWithEmail: '使用邮箱继续',
-    cancel: '取消',
-    logout: '断开连接'
-  }
 };
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);

@@ -60,24 +60,6 @@ const content = {
     noAtts: 'Este agente no ha emitido ninguna atestación todavía.',
     slot: 'slot'
   },
-  ZH: {
-    back: '返回浏览器',
-    agent: '代理',
-    resolving: '正在解析代理账户…',
-    status: '状态',
-    revoked: '已撤销',
-    active: '活跃',
-    attsIssued: '已发出的证明',
-    registered: '注册时间',
-    accAddress: '账户地址 (PDA)',
-    operator: '操作员',
-    agentId: '代理 ID (Ed25519 公钥)',
-    policyRoot: '策略根 (merkle)',
-    attHistory: '证明历史',
-    loadingAtts: '正在加载证明…',
-    noAtts: '此代理尚未发出任何证明。',
-    slot: '区块'
-  }
 };
 
 export function AgentDetail({ pubkey }: { pubkey: string }) {

@@ -36,18 +36,6 @@ const content = {
     x402Done: 'Sesión desbloqueada',
     x402ConnectFirst: 'Conecta primero tu wallet',
   },
-  ZH: {
-    tag: '法证浏览器',
-    headline: ['查找任何', '代理操作。', '亲自验证。'],
-    desc: '通过证明 ID、代理密钥、交易签名或模式进行搜索。每个结果都会在你的浏览器中进行链上验证——我们绝不会介于你和签名之间。',
-    x402Tag: '一次性查询',
-    x402Title: '无需账户',
-    x402Desc: '用钱包支付一次，即可解锁本次会话的扩展搜索和取证 PDF 导出功能。无需注册，无需订阅。',
-    x402Btn: `支付 ${X402_DISPLAY_PRICE} · 解锁会话`,
-    x402Paying: '正在 devnet 上确认…',
-    x402Done: '会话已解锁',
-    x402ConnectFirst: '请先连接钱包',
-  },
 };
 
 function X402Banner() {

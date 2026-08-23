@@ -133,41 +133,4 @@ export const sdkRust: LocalizedDoc = {
       },
     ],
   },
-  ZH: {
-    title: 'Rust SDK',
-    intro:
-      '`prova-agent-sdk` crate 为 Rust 代理提供完整的证明生命周期：注册、证明、批量、撤销 — 带类型化错误和流式负载构建器。不依赖 Anchor 客户端；指令直接构建。',
-    blocks: [
-      { kind: 'h2', text: '安装' },
-      { kind: 'code', code: installCode },
-      { kind: 'h2', text: '配置' },
-      { kind: 'code', code: setupCode },
-      { kind: 'h2', text: '证明' },
-      { kind: 'code', code: attestCode },
-      {
-        kind: 'callout',
-        tone: 'info',
-        text: '所有写入方法返回 `Result<_, ProvaError>` — 类型化错误（如 `BatchLimitExceeded`）而非 panic，符合 Rust 惯用的错误处理。',
-      },
-      { kind: 'h2', text: '负载构建器' },
-      { kind: 'code', code: builderCode },
-      { kind: 'h2', text: '读取与生命周期' },
-      { kind: 'code', code: readCode },
-      { kind: 'h2', text: 'API 一览' },
-      {
-        kind: 'table',
-        headers: ['方法', '说明'],
-        rows: [
-          ['`ProvaClient::new(agent_keypair, config)`', '构建客户端。`ProvaConfig::default()` 指向 Devnet。'],
-          ['`ProvaClient::hash_action(&str) -> [u8; 32]`', '负载字符串的 SHA-256。'],
-          ['`register_agent(&operator, policy_root)`', '创建代理 PDA。`policy_root: Option<[u8; 32]>`。'],
-          ['`attest(&operator, hash, action_type, privacy_mode)`', '单条证明。'],
-          ['`batch_attest(&operator, &[AttestParams])`', '一笔交易 1–100 条证明。'],
-          ['`update_policy_root(&operator, new_root)`', '轮换策略 Merkle 根。'],
-          ['`revoke_agent(&operator)`', '不可逆的终止开关。'],
-          ['`get_agent_account(&pubkey)` / `is_agent_active(&pubkey)`', '读取链上状态。'],
-        ],
-      },
-    ],
-  },
 };

@@ -81,44 +81,6 @@ const content = {
     disclaimer: 'Proyecto independiente. No afiliado a la Solana Foundation. Solana® es una marca registrada.',
     compliance: 'Cumple con las Directrices de Solana.org y el Código de Conducta de la Solana Foundation (Mayo 2026).'
   },
-  ZH: {
-    description: '代理互联网的法证级结算层。通过 Solana 机器支付协议提供密码学行为证明。',
-    sections: {
-      产品: [
-        { label: '工作原理', href: '/product/how' },
-        { label: 'SDK', href: '/product/sdk' },
-        { label: '安全性', href: '/product/security' },
-        { label: '隐私模式', href: '/product/privacy' },
-      ],
-      开发者: [
-        { label: '快速入门', href: '/developers/quick-start' },
-        { label: '文档', href: '/developers/docs' },
-        { label: 'API 与 MCP 参考', href: '/developers/api' },
-        { label: '示例', href: '/developers/examples' },
-      ],
-      解决方案: [
-        { label: '合规性', href: '/solutions/compliance' },
-        { label: '运营商', href: '/solutions/operators' },
-        { label: '法务', href: '/solutions/legal' },
-        { label: '审计', href: '/solutions/auditors' },
-      ],
-      公司: [
-        { label: '关于', href: '/about' },
-        { label: '博客', href: '/blog' },
-        { label: '更新日志', href: '/changelog' },
-        { label: '招聘', href: '/careers' },
-        { label: '联系我们', href: '/contact' },
-      ],
-    },
-    copyright: '© 2026 Prova Labs · Apache 2.0 · 开源构建',
-    links: {
-      privacy: '隐私政策',
-      terms: '服务条款',
-      contact: '联系我们'
-    },
-    disclaimer: '独立项目。不隶属于 Solana 基金会。Solana® 注册商标。',
-    compliance: '符合 Solana.org 开发者指南与 Solana 基金会行为准则（2026年5月）。'
-  }
 };
 
 export function Footer() {

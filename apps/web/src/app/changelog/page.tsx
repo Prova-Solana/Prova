@@ -4,6 +4,23 @@ import { useI18n } from '@/components/i18n-provider';
 
 const releases = [
   {
+    version: '0.2.5',
+    date: '2026-08-23',
+    type: 'Change',
+    notes: [
+      'Removed Chinese (ZH) as a site language — English and Spanish only going forward',
+    ],
+  },
+  {
+    version: '0.2.4',
+    date: '2026-08-23',
+    type: 'Fix',
+    notes: [
+      'Corrected architecture copy site-wide: Prova runs its own purpose-built Anchor program with native Ed25519 verification, not the Solana Attestation Service — fixed in the homepage solution section, the "trusted by" strip, and two blog posts',
+      'Corrected receipt storage language from "on-chain PDA" to "on-chain event" to match the real account model (one PDA per agent, attestations are events, not per-attestation accounts)',
+    ],
+  },
+  {
     version: '0.2.3',
     date: '2026-08-17',
     type: 'Fix',
@@ -103,10 +120,6 @@ const content = {
   ES: {
     tag: 'Changelog',
     headline: ['Qué se desplegó.', 'Cuándo se desplegó.'],
-  },
-  ZH: {
-    tag: '更新日志',
-    headline: ['已发布的内容。', '发布时间。'],
   },
 };
 

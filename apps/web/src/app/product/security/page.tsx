@@ -40,24 +40,6 @@ const content = {
       { t: 'Elevación de privilegios', m: 'Verificación de autoridad en cada instrucción — sin puertas traseras de admin en el código del programa.' },
     ],
   },
-  ZH: {
-    tag: '安全',
-    title: '安全模型',
-    desc: 'Prova 从第一天就采用 STRIDE 分析进行设计。每个威胁向量都有相应的缓解控制。',
-    strideLabel: 'STRIDE',
-    auditLabel: '审计',
-    auditTitle: '审计状态',
-    auditDesc: '计划在主网上线前由 Otter Security / Halborn 进行外部安全审计。漏洞赏金计划将在主网上线时启动。',
-    reportLabel: '报告安全问题：',
-    threats: [
-      { t: '仿冒 (Spoofing)', m: '链上 Ed25519 签名验证 — 每个证明必须由代理密钥签名。' },
-      { t: '篡改 (Tampering)', m: '不可变的 Solana 账户 — 证明账户不存在更新指令。' },
-      { t: '否认 (Repudiation)', m: '与代理 PDA 关联的密码学签名 — 代理无法否认发出。' },
-      { t: '信息泄露', m: '通过 Vanish Core 的隐私模式 — 负载哈希是公开的，但内容是加密的。' },
-      { t: '拒绝服务', m: '基于费用的优先级 — 垃圾攻击受 SOL 费用的经济限制。' },
-      { t: '权限提升', m: '每条指令中都有权限检查 — 程序代码中没有管理员后门。' },
-    ],
-  },
 };
 
 export default function SecurityPage() {

@@ -31,19 +31,6 @@ const content = {
     getStarted: 'Explorar Explorer',
     viewPricing: 'Contáctanos'
   },
-  ZH: {
-    tag: '解决方案',
-    title: '面向审计员和承保人',
-    desc: '如果没有基础事实，为自主系统定价风险是不可能的。Prova 为每一项 AI 决定提供不可篡改且透明的追踪，以实现确定性的承保。',
-    benefits: [
-      '使用可验证的历史记录为代理保险保单定价',
-      '通过 REST API 和 Webhooks 自动化合规检查',
-      '将审计周期从几个季度缩短到几天',
-      '实时观察自主系统的责任风险',
-    ],
-    getStarted: '探索浏览器',
-    viewPricing: '联系我们'
-  }
 };
 
 export function AuditorsContent() {

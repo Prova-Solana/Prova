@@ -63,36 +63,6 @@ const content = {
       },
     ]
   },
-  ZH: {
-    sectionTitle: '为承担风险的人准备',
-    headline: ['一张收据。', '让四类关键人员', '终于能安稳入睡。'],
-    cases: [
-      {
-        icon: Scale,
-        persona: '合规审查员',
-        title: '一次性通过 AI 法案审计',
-        desc: '将代理的每一项操作映射到 MetaComp KYA 和欧盟 AI 法案条款。导出审计员真正认可的 PDF 报告。',
-      },
-      {
-        icon: ShieldCheck,
-        persona: '承保人',
-        title: '用确凿证据为代理风险定价',
-        desc: '在几天而不是几个季度内解决与代理相关的索赔。密码学证明将永远取代“客户说……”。',
-      },
-      {
-        icon: FileSearch,
-        persona: '法务',
-        title: '法庭采信的设计',
-        desc: '链上证明符合《联邦证据规则》901 的真实性标准 —— 无需专家证人即可采信。',
-      },
-      {
-        icon: BarChart3,
-        persona: '风险与运营',
-        title: '在造成损失前捕捉偏差',
-        desc: '将证明流输入至 Datadog、Splunk 或您自己的 SIEM。通过实时仪表板了解每位代理的实际操作。',
-      },
-    ]
-  }
 };
 
 export function UseCasesGrid() {

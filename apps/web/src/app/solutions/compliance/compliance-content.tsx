@@ -33,20 +33,6 @@ const content = {
     getStarted: 'Leer Documentación',
     viewPricing: 'Contactar Ventas'
   },
-  ZH: {
-    tag: '解决方案',
-    title: '面向合规官',
-    desc: '自主 AI 代理带来了前所未有的监管风险。Prova 帮助您的合规团队即刻满足欧盟 AI 法案的透明度要求和内部控制。',
-    benefits: [
-      '即刻满足欧盟 AI 法案第 12 条（记录保存）要求',
-      '不可篡改的机器支付协议 (MPP) 集成记录',
-      '符合 Solana 基金会行为准则（2026 年 5 月）',
-      '导出带有密码学印记的 PDF 合规报告',
-      '以编程方式强制执行 MetaComp KYA（了解您的代理）政策',
-    ],
-    getStarted: '阅读文档',
-    viewPricing: '联系销售'
-  }
 };
 
 export function ComplianceContent() {

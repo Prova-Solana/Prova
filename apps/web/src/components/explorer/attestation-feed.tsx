@@ -47,23 +47,6 @@ const content = {
     next: 'Siguiente',
     page: 'Página'
   },
-  ZH: {
-    title: '最近的证明',
-    onThisPage: '在本页',
-    rpcError: 'RPC 错误：',
-    querying: '正在查询 devnet…',
-    noAttestations: '暂无证明',
-    noAttestationsDesc: '该程序已在 devnet 上线，但尚未有代理发出证明。运行 SDK 快速入门以推送第一个。',
-    openQuickstart: '打开快速入门 →',
-    slot: '区块',
-    agent: '代理',
-    hash: '哈希',
-    vanish: 'vanish',
-    verified: '已验证',
-    prev: '上一页',
-    next: '下一页',
-    page: '页码'
-  }
 };
 
 export function AttestationFeed() {

@@ -41,21 +41,6 @@ const labels = {
     sourceL: 'Fuente',
     sourceS: 'Open-source empresarial',
   },
-  ZH: {
-    finalityV: '< 1s',
-    finalityL: '最终确认',
-    finalityS: '链上确认',
-    feeV: '$0.0005',
-    feeL: '单据成本',
-    feeS: '比 EVM 便宜 500 倍',
-    attestL: '证明总数',
-    attestS: 'devnet 上已索引',
-    agentL: '活跃代理',
-    agentS: 'devnet 上已注册',
-    sourceV: 'Apache 2.0',
-    sourceL: '源码',
-    sourceS: '自行审计',
-  },
 };
 
 async function fetchCounts(): Promise<Counts> {

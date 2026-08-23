@@ -23,7 +23,6 @@ export function LanguageSelector() {
   const languages = [
     { code: 'EN', name: 'English' },
     { code: 'ES', name: 'Español' },
-    { code: 'ZH', name: '中文' },
   ];
 
   return (

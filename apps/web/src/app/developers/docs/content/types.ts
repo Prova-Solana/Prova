@@ -21,5 +21,4 @@ export interface DocContent {
 export interface LocalizedDoc {
   EN: DocContent;
   ES: DocContent;
-  ZH: DocContent;
 }

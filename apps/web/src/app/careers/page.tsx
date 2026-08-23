@@ -26,17 +26,6 @@ const content = {
       { title: 'Developer Relations',     type: 'Tiempo completo', location: 'Remoto', req: ['Escritura técnica', 'Construcción de comunidad', 'Ecosistema Solana'] },
     ],
   },
-  ZH: {
-    tag: '招聘',
-    headline: ['构建代理互联网的', '信任层。'],
-    desc: '我们是一个专注的小团队，致力于构建重要的基础设施。远程优先，异步友好。',
-    applyBtn: '申请 →',
-    openings: [
-      { title: '高级 Solana 工程师', type: '全职', location: '远程', req: ['5 年以上 Rust 经验', 'Anchor/Solana 程序经验', '安全思维'] },
-      { title: '前端工程师',         type: '全职', location: '远程', req: ['Next.js 15 / React 19', 'TypeScript', 'Tailwind CSS'] },
-      { title: '开发者关系',         type: '全职', location: '远程', req: ['技术写作', '社区建设', 'Solana 生态系统知识'] },
-    ],
-  },
 };
 
 export default function CareersPage() {

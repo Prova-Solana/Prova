@@ -23,15 +23,6 @@ const content = {
     questions: '¿Preguntas sobre integración empresarial?',
     talkToEngineer: 'Habla con un Ingeniero de Seguridad →'
   },
-  ZH: {
-    sectionTitle: '开始',
-    headline: ['接下来的两分钟内，', '完成你的', '第一个证明。'],
-    description: '安装 SDK。包装一个代理操作。看着收据登录 Solana。前100名免费 — 无需信用卡，无需销售电话，无需等待名单。',
-    openQuickStart: '打开快速入门',
-    readDocs: '阅读文档',
-    questions: '开始前有问题？',
-    talkToEngineer: '与工程师交谈 →'
-  }
 };
 
 export function FinalCta() {

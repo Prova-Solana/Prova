@@ -73,17 +73,6 @@ const content = {
     time: 'Tiempo',
     hint: 'Las respuestas vienen directo del indexer en vivo — los mismos datos que vería cualquier auditor.',
   },
-  ZH: {
-    title: '在线试用',
-    desc: '直接从浏览器对生产 API 发起真实请求。公开端点无需密钥；添加您的密钥可解锁高级路由。',
-    apiKey: 'API 密钥（可选）',
-    apiKeyPlaceholder: 'prova_… — 绝不存储，仅作为 x-api-key 发送',
-    run: '运行',
-    running: '运行中…',
-    status: '状态',
-    time: '耗时',
-    hint: '响应直接来自实时索引器 — 与任何审计方看到的数据完全相同。',
-  },
 };
 
 export function ApiConsole() {

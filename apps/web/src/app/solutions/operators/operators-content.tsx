@@ -35,21 +35,6 @@ const content = {
     getStarted: 'Comenzar',
     viewPricing: 'Ver Precios'
   },
-  ZH: {
-    tag: '解决方案',
-    title: '面向 AI 代理运营商',
-    desc: '如果无法对代理的操作进行审计，那么您部署的每个代理都将成为一种负债。Prova 为您提供所需的法证追踪。',
-    benefits: [
-      '证明您的代理在其授权范围内行事',
-      '按需为监管机构生成合规报告',
-      '在造成损失前检测出异常代理行为',
-      '利用密码学证据减少责任风险',
-      '通过透明度建立企业客户的信任',
-      '满足 MetaComp KYA 和欧盟 AI 法案的要求',
-    ],
-    getStarted: '开始使用',
-    viewPricing: '查看定价'
-  }
 };
 
 export function OperatorsContent() {

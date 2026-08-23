@@ -52,26 +52,6 @@ const content = {
     cancel: 'Cancelar',
     footer: 'Pago único · sin cuenta · el recibo está on-chain'
   },
-  ZH: {
-    export: '导出',
-    openReport: '打开法证报告',
-    exportPrice: '导出 —',
-    micropayment: 'x402 微支付',
-    payPerQuery: '按次查询付费',
-    price: '价格',
-    lamports: 'lamports · devnet',
-    treasury: '金库',
-    network: '网络',
-    wallet: '钱包',
-    notConnected: '未连接',
-    paymentFailed: '支付失败',
-    confirming: '确认中…',
-    connectWallet: '连接钱包',
-    payAndUnlock: '支付',
-    andUnlock: '并解锁',
-    cancel: '取消',
-    footer: '一次性付款 · 无需账户 · 链上收据'
-  }
 };
 
 export function ForensicExport({

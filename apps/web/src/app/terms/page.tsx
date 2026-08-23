@@ -61,35 +61,6 @@ const content = {
       },
     ],
   },
-  ZH: {
-    tag: '法律',
-    title: '服务条款',
-    updated: '最后更新：2026 年 5 月 8 日',
-    inquiries: '法律咨询：',
-    sections: [
-      {
-        title: '1. 接受条款',
-        body: '使用 Prova 即表示您同意这些条款。如果您不同意，请勿使用本服务。',
-      },
-      {
-        title: '2. 非财务建议',
-        body: 'Prova 是一款用于加密证明的软件工具。本平台上的任何内容均不构成财务、法律或投资建议。',
-      },
-      {
-        title: '3. 非托管',
-        body: 'Prova 从不托管用户资金或私钥。您对密钥对的安全性承担全部责任。',
-      },
-      {
-        title: '4. 免责声明',
-        body: 'Prova 与 Solana Foundation 没有任何关联、背书或赞助关系。Solana® 是 Solana Foundation 的注册商标。',
-      },
-      {
-        title: '5. 联系方式',
-        body: null,
-        email: 'xvaiosx7@gmail.com',
-      },
-    ],
-  },
 };
 
 export default function TermsPage() {

@@ -91,27 +91,6 @@ const content = {
       invalidHex: 'Hex inválido'
     }
   },
-  ZH: {
-    tag: '发出证明',
-    headline: ['包装一个操作。', '获取收据。'],
-    desc: ['使用您的代理密钥对签署操作哈希，程序会根据 ', 'agent_id', ' 验证 Ed25519 签名，收据将作为 ', 'AttestationIssued', ' 事件记录在 Solana 上。'],
-    step0: { tag: '步骤 0 · 连接操作员', title: '连接注册此代理的操作员钱包。', cta: '连接钱包' },
-    loadingAgent: '正在 devnet 上查找您注册的代理…',
-    noAgent: { tag: '此操作员未注册代理', desc: '连接的钱包还没有 AgentAccount。请先注册一个。', cta: '打开注册流程' },
-    revoked: { tag: '此代理已被撤销', desc: '程序拒绝为撤销的代理执行 record_attestations。请切换到其他操作员钱包。' },
-    agentSummary: { operator: '操作员', pda: '代理 PDA', attestations: '已发出证明' },
-    step1: { tag: '步骤 1 · 代理密钥对', title: '上传您在注册时保存的密钥对。', desc: '使用 FileReader 本地读取，从不传输。用于在链下签署每个 action_hash。', cta: '选择密钥对 JSON', success: '密钥对已加载 · 匹配 agent_id', replace: '替换' },
-    step2: { tag: '步骤 2 · 操作哈希', title: '描述操作或粘贴 32 字节的哈希。', desc: '在生产环境中，这是结构化操作负载的确定性哈希。对于测试，输入描述，我们将为您计算 sha-256。', btnText: '描述 (sha256)', btnHex: '原始 Hex (32 字节)', placeholderText: '在 14:32 UTC 在 Jupiter 将 100 USDC 兑换为 SOL', placeholderHex: '64 个十六进制字符 · 0x 前缀可选' },
-    step3: { tag: '步骤 3 · 元数据与提交', title: '标记，签署，发送。', actionType: '操作类型', privacyMode: '隐私模式', vanishTitle: 'Vanish — 选择性披露', vanishDesc: '哈希在链上；基础操作保留在链下。', publicTitle: '公开 — 完整负载可见', publicDesc: '标准收据 — 任何拥有哈希原像的人都可以验证。' },
-    success: { tag: '证明已写入 Solana', tx: '交易签名', type: '操作类型', hash: '操作哈希', open: '打开收据', another: '发出另一个' },
-    submit: { signing: '签名并广播中…', sign: '通过代理签名 · 由操作员发送' },
-    anatomy: ['剖析：1 个 Ed25519 预验证 ix (代理签名 ', ' → action_hash) · 1 个 record_attestations ix · 由操作员 ', ' 支付。'],
-    errors: {
-      invalidKeypair: '解析密钥对失败',
-      mismatch: '此密钥对与已注册的代理不匹配。代理 ID 为 {0}… 但上传的密钥为 {1}…',
-      invalidHex: '无效的十六进制'
-    }
-  }
 };
 
 export function IssueAttestation() {

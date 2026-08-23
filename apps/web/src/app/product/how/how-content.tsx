@@ -27,18 +27,6 @@ const content = {
       { n: '04', t: 'Liquidación On-chain', d: 'La firma se sella en un PDA de Solana, haciéndola inmutable y con marca de tiempo.' },
     ],
   },
-  ZH: {
-    tag: '产品',
-    title: '工作原理',
-    desc: 'Prova 位于您的 AI 代理和 Solana 区块链之间，是一个轻量级的密码学层，充当每个代理操作的法证见证人。',
-    architectureLabel: '架构',
-    steps: [
-      { n: '01', t: '代理意图', d: '您的代理决定执行一项操作（例如 DeFi 交换或工具调用）。' },
-      { n: '02', t: '负载哈希', d: 'SDK 对操作的 JSON 负载进行确定性哈希。' },
-      { n: '03', t: 'Ed25519 签名', d: '代理使用其私钥对哈希进行密码学签名。' },
-      { n: '04', t: '链上结算', d: '签名被密封到 Solana PDA 中，使其不可变且带有时间戳。' },
-    ],
-  },
 };
 
 export function HowContent() {

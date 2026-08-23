@@ -53,31 +53,6 @@ const content = {
       },
     ],
   },
-  ZH: {
-    tag: '法律',
-    title: '隐私政策',
-    updated: '最后更新：2026 年 5 月 8 日',
-    inquiries: '隐私咨询：',
-    sections: [
-      {
-        title: '1. 我们收集的数据',
-        body: 'Prova 仅收集提供服务所需的最少数据：Solana 钱包地址（仅公钥）、链上证明数据（设计上公开）以及用于计费的使用指标。',
-      },
-      {
-        title: '2. 链上数据',
-        body: '提交到 Solana 区块链的数据是公开且不可篡改的。请勿在证明负载中提交个人身份信息。对于敏感数据，请使用隐私模式（Vanish Core）。',
-      },
-      {
-        title: '3. LFPDPPP 合规（墨西哥）',
-        body: 'Prova 遵守《联邦个人数据保护法》。如需 ARCO 请求（访问、更正、取消、反对），请联系：xvaiosx7@gmail.com。',
-      },
-      {
-        title: '4. 联系方式',
-        body: null,
-        email: 'xvaiosx7@gmail.com',
-      },
-    ],
-  },
 };
 
 export default function PrivacyPage() {

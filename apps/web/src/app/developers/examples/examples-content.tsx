@@ -62,35 +62,6 @@ const content = {
       }
     }
   },
-  ZH: {
-    tag: '示例',
-    title: '代码示例',
-    desc: '展示如何将 Prova 集成到您现有的代理架构中的真实示例。',
-    sections: {
-      eliza: {
-        title: 'elizaOS 插件',
-        content: [
-          '将 Prova 与 elizaOS 代理集成的最简单方法是通过官方插件（npm：prova-plugin-eliza）。',
-          'import { provaPlugin, attesterFromProvaClient } from "prova-plugin-eliza";\nimport { ProvaClient } from "prova-agent-sdk";\n\nconst prova = new ProvaClient({ rpcUrl, agentKeypair });\nconst attester = attesterFromProvaClient(\n  prova, ProvaClient.hashAction, operatorKeypair,\n);\n\n// 添加到 runtime 的 plugins 数组：\nconst runtime = new AgentRuntime({\n  // ...character、model provider 等\n  plugins: [provaPlugin({ attester })],\n});',
-          '配置完成后，代理会自动对其执行的每个操作进行哈希和证明 — 连续操作会打包进一笔 Solana 交易，且 Prova 故障绝不会中断操作。'
-        ]
-      },
-      defi: {
-        title: 'DeFi 交换代理',
-        content: [
-          '如果您使用 @solana/web3.js 库构建自定义代理，则可以手动封装 Jupiter 交换。',
-          '// 1. 代理执行交换\nconst swapTx = await jupiter.executeSwap(route);\n\n// 2. 哈希交换参数\nconst hash = await ProvaClient.hashAction(JSON.stringify(route));\n\n// 3. 发出证明\nawait provaClient.attest({\n  operatorKeypair: wallet,\n  actionHash: hash,\n  actionType: "Transaction"\n});'
-        ]
-      },
-      anchor: {
-        title: '原生 Anchor CPI',
-        content: [
-          'Solana 程序可以通过跨程序调用 (CPI) 直接调用 Prova 合约。Ed25519 预验证指令必须由客户端添加到交易层 — 程序通过 instructions sysvar 验证它。',
-          '// Rust CPI 示例（启用 "cpi" feature 的 prova-program）\nlet cpi_ctx = CpiContext::new(\n    prova_program.to_account_info(),\n    prova_program::cpi::accounts::RecordAttestations {\n        agent: agent_account.to_account_info(),\n        operator: operator.to_account_info(),\n        instructions: instructions_sysvar.to_account_info(),\n    },\n);\n\nprova_program::cpi::record_attestations(cpi_ctx, vec![AttestationInput {\n    action_type: ActionType::ToolCall,\n    action_hash,\n    privacy_mode: false,\n    signature,\n}])?;'
-        ]
-      }
-    }
-  }
 };
 
 export function ExamplesContent() {

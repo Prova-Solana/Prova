@@ -9,7 +9,6 @@ import { DOCS_BASE, docHref, docsFlat, docsNav } from './docs-nav';
 const ui = {
   EN: { tag: 'Documentation', menu: 'Docs menu', prev: 'Previous', next: 'Next' },
   ES: { tag: 'Documentación', menu: 'Índice de docs', prev: 'Anterior', next: 'Siguiente' },
-  ZH: { tag: '文档', menu: '文档目录', prev: '上一页', next: '下一页' },
 };
 
 function useActiveSlug(): string {

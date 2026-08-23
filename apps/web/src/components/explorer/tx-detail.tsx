@@ -66,29 +66,6 @@ const content = {
     openSolana: 'Abrir en Solana Explorer →',
     backRecent: 'Volver a atestaciones recientes',
   },
-  ZH: {
-    back: '返回浏览器',
-    tx: '交易',
-    loading: '正在加载交易…',
-    status: '状态',
-    success: '成功',
-    failed: '失败',
-    slot: '区块',
-    blockTime: '出块时间',
-    atts: '此交易中的证明',
-    noAtts: '此交易涉及 Prova 程序，但未发出 AttestationIssued 事件。',
-    agentPDA: '代理 (PDA)',
-    actionType: '操作类型',
-    actionHash: '操作哈希',
-    agentId: '代理 ID',
-    privacyMode: '隐私模式',
-    vanish: 'vanish',
-    disclosed: '公开',
-    timestamp: '时间戳',
-    ed25519: 'Ed25519 签名',
-    openSolana: '在 Solana Explorer 中打开 →',
-    backRecent: '返回最近的证明',
-  }
 };
 
 export function TxDetail({ signature }: { signature: string }) {

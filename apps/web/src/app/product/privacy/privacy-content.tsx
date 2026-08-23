@@ -27,18 +27,6 @@ const content = {
       { t: 'Verificación Criptográfica', d: 'Cualquier tercero puede aplicar hash a tu payload divulgado y compararlo con el registro on-chain inmutable.' },
     ],
   },
-  ZH: {
-    tag: '产品',
-    title: '隐私模式',
-    desc: '使用 Vanish Core 进行选择性披露。证明 AI 操作已执行，而不会泄露专有提示词。',
-    mechanismLabel: '机制',
-    steps: [
-      { t: '链下负载', d: '敏感的 JSON 负载永远不会被广播到 Solana 网络。' },
-      { t: '链上哈希', d: '只有负载的确定性 SHA-256 哈希会被密封在链上。' },
-      { t: '选择性披露', d: '您选择何时以及与谁共享原始负载。' },
-      { t: '密码学验证', d: '任何第三方都可以对您披露的负载进行哈希处理，并将其与不可变的链上记录进行匹配。' },
-    ],
-  },
 };
 
 export function PrivacyContent() {

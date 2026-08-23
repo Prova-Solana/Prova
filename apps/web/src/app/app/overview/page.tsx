@@ -40,22 +40,6 @@ const content = {
     indexed: 'atestaciones indexadas.',
     openExplorer: 'Abrir Explorer →',
   },
-  ZH: {
-    pageTitle: '概览',
-    kpis: [
-      { label: '证明总数',    sub: '在 devnet 上' },
-      { label: '活跃代理',    sub: '已链上注册' },
-      { label: '证明数 (7d)', sub: '过去 7 天' },
-      { label: '告警',         sub: '一切正常' },
-    ],
-    emptyTitle: '暂无证明',
-    emptyDesc: '注册一个代理并发出您的第一个证明，即可在此查看数据。',
-    registerAgent: '注册代理 →',
-    issueAtt: '发出证明 →',
-    liveData: '来自 prova-api.fly.dev 的实时数据',
-    indexed: '条证明已索引。',
-    openExplorer: '打开 Explorer →',
-  },
 };
 
 interface Stats {

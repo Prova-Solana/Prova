@@ -27,18 +27,6 @@ const content = {
     disclaimerLabel: 'Aviso legal:',
     disclaimer: 'Prova es un proyecto de software independiente y NO está afiliado, respaldado ni patrocinado por la Solana Foundation. Solana® es una marca registrada de la Solana Foundation. Prova no custodia fondos de usuarios ni proporciona asesoramiento financiero.',
   },
-  ZH: {
-    tag: '关于我们',
-    headline: ['代理经济', '所缺少的', '法证层。'],
-    p1: 'Prova 创立于 2026 年，秉持一个信念：没有法证问责制，代理经济就无法运转。当 AI 代理开始在 Solana 上处理真实的金融决策时，我们发现了一个关键缺口——数千个代理在行动，却没有任何防篡改的记录。',
-    p2: '我们将 Prova 构建为这一缺失的层。不是另一个身份协议，不是另一个声誉注册表——而是一个行为证明层，用于捕获',
-    p2em: '代理实际执行的操作',
-    p2b: '，由其密钥签名，链上锚定，可独立验证。',
-    p3: 'Prova 是开源的（Apache 2.0），非托管的，运行在 Solana 上自有的 Anchor 程序之上，内置原生 Ed25519 验证。我们的存在是为了让代理互联网变得可信赖。',
-    quote: '"每一个代理操作都值得拥有一张加密收据。"',
-    disclaimerLabel: '法律免责声明：',
-    disclaimer: 'Prova 是一个独立的软件项目，与 Solana Foundation 没有任何关联、背书或赞助关系。Solana® 是 Solana Foundation 的注册商标。Prova 不托管用户资金，也不提供财务建议。',
-  },
 };
 
 export default function AboutPage() {

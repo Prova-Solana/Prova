@@ -46,28 +46,6 @@ const content = {
       },
     ]
   },
-  ZH: {
-    sectionTitle: '面临的问题',
-    dateStamp: '2026年5月 · Solana 主网',
-    headline: ['Solana 上 95% 的交易', '由 AI 驱动。', '但没有一笔留下', '法证级轨迹。'],
-    problems: [
-      {
-        n: '01',
-        title: '云端日志不是证据',
-        description: '当自主代理通过 Jupiter 交易数百万资金或执行追加保证金时，AWS 中的 JSON 日志是不够的。你需要不可篡改且无法否认的密码学证据。',
-      },
-      {
-        n: '02',
-        title: '机器经济需要零信任',
-        description: '随着机器支付协议 (MPP) 的普及，代理自主支付 API 费用。如果出现争议，链下日志在企业监管机构、保险公司或法庭面前毫无分量。',
-      },
-      {
-        n: '03',
-        title: '身份 ≠ 问责',
-        description: 'Solana 代理注册表赋予了代理链上身份。但仅凭身份无法证明代理实际做了什么。真正的问责制要求为每一项操作提供可验证的收据。',
-      },
-    ]
-  }
 };
 
 export function ProblemSection() {
