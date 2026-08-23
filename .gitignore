@@ -55,6 +55,7 @@ next-env.d.ts
 .claude/
 CLAUDE.md
 claude.md
+AGENTS.md
 Memory.md
 PROJECT.md
 .agents/
@@ -87,6 +88,8 @@ MILESTONE-4-validacion-kit.md
 FORMULARIO-M4-borrador.md
 llamada.md
 fernando.md
+CHECKPOINT-3-entrega.md
+MILESTONE-5-mvp-entrega.md
 
 # Build artifacts
 packages/program/.anchor/
