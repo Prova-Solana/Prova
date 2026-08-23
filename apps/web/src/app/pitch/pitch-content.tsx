@@ -75,6 +75,7 @@ const content = {
         bullets: [
           '4 packages published, Apache 2.0, verifiable right now on npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adapter for [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ on-chain actions, Prova instruments it rather than competing with it), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 18, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          'Ecosystem contribution, not just consumption: [PR #4960 open against otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library, pending review.',
           'Real, production integration with [wasiai.io](https://wasiai.io) (AI agent marketplace): "wasiai proves who an agent is and how good it is. Prova proves what it actually did — action by action, tamper-proof."',
         ],
         pendingQuote: true,
@@ -183,6 +184,7 @@ const content = {
         bullets: [
           '4 SDKs publicados, Apache 2.0, verificables ahora mismo en npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adaptador de [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ acciones on-chain, Prova lo instrumenta en vez de competir con él), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 18-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          'Contribución al ecosistema, no solo consumo: [PR #4960 abierto contra otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, pendiente de revisión.',
           'Integración real y en producción con [wasiai.io](https://wasiai.io) (marketplace de agentes): "wasiai proves who an agent is and how good it is. Prova proves what it actually did — action by action, tamper-proof."',
         ],
         pendingQuote: true,
