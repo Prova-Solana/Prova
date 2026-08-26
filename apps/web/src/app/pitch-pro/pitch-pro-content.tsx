@@ -3,7 +3,7 @@
 import { Fragment } from 'react';
 import { useI18n } from '@/components/i18n-provider';
 
-const TOTAL = 8;
+const TOTAL = 7;
 
 /** Parses `[label](url)` markdown-style links inside a string into clickable spans. */
 function linkify(text: string) {
@@ -90,13 +90,6 @@ const content = {
       },
       {
         n: 7,
-        title: 'Integrity as practice, not as talk',
-        body: [
-          'Two public corrections already applied before this pitch, not after someone questioned them: complete removal of a self-issued audit badge ("JARGUS", Aug 18, 2026) and correction of inaccurate technical copy on the site (SAS → own Anchor program; PDA → on-chain event; fixed and deployed Aug 23, 2026, public changelog v0.2.4/v0.2.5).',
-        ],
-      },
-      {
-        n: 8,
         title: 'Ask / next step',
         body: [
           'Prova is seeking funding via Solana Foundation Grants or other programs across the Solana ecosystem to accelerate commercial validation and, eventually, the Mainnet migration — not just a green light, but concrete runway. It fits the product\'s real state: a technical MVP already live on Devnet, one design partner with real integration evidence (David Rivas) plus one validated pilot with an accepted design partner (wasiai.io), and a decision already made to wait for the first real LOI before moving Mainnet\'s timing — funding is what sustains that runway while that validation arrives.',
@@ -112,7 +105,7 @@ const content = {
         { label: 'Attestation count', text: '— corroborated (not exactly verified) via direct RPC, correct label already incorporated in slide 05.' },
         { label: 'Design partner repo', text: '— integration confirmed genuine via gh api, still not citable on its own without a written quote. Already requested directly, pending his reply.' },
       ],
-      closing: 'None of the three invalidates the product — they\'re precision corrections, exactly the kind of check already applied once with the JARGUS badge.',
+      closing: 'None of these invalidate the product — they\'re precision corrections, applied before anyone asked.',
     },
   },
   ES: {
@@ -173,13 +166,6 @@ const content = {
       },
       {
         n: 7,
-        title: 'Integridad como práctica, no como discurso',
-        body: [
-          'Dos correcciones públicas ya aplicadas antes de este pitch, no después de que alguien las cuestionara: remoción completa de un badge de auditoría autoemitido ("JARGUS", 18-ago-2026) y corrección de descripción técnica imprecisa en el sitio (SAS → programa Anchor propio; PDA → evento on-chain; corregido y desplegado 23-ago-2026, changelog público v0.2.4/v0.2.5).',
-        ],
-      },
-      {
-        n: 8,
         title: 'Ask / siguiente paso',
         body: [
           'Prova busca financiamiento vía Solana Foundation Grants u otros programas del ecosistema Solana para acelerar validación comercial y, eventualmente, la migración a Mainnet — no solo un visto bueno, sino runway concreto. Encaja con el estado real del producto: MVP técnico ya vivo en Devnet, un design partner con evidencia de integración real (David Rivas) más un piloto validado con un design partner que ya aceptó (wasiai.io), y una decisión ya tomada de esperar a la primera LOI real antes de mover el timing de Mainnet — el financiamiento es lo que sostiene ese runway mientras esa validación llega.',
@@ -195,7 +181,7 @@ const content = {
         { label: 'Conteo de atestaciones', text: '— corroborado (no verificado exacto) vía RPC directo, etiqueta correcta ya incorporada en la slide 05.' },
         { label: 'Repo del design partner', text: '— integración confirmada genuina vía gh api, sigue sin ser citable por sí solo sin una cita escrita. Ya se le pidió directo — pendiente de su respuesta.' },
       ],
-      closing: 'Ninguna de las tres invalida el producto — son correcciones de precisión, exactamente el tipo de chequeo que ya se aplicó una vez con el badge JARGUS.',
+      closing: 'Ninguna de estas invalida el producto — son correcciones de precisión, aplicadas antes de que alguien preguntara.',
     },
   },
 } as const;
@@ -227,7 +213,7 @@ export function PitchProContent() {
         </div>
       </section>
 
-      {/* Slides 02-08 */}
+      {/* Slides 02-07 */}
       {t.slides.map((s) => (
         <section
           key={s.n}
