@@ -99,7 +99,7 @@ const content = {
         n: 8,
         title: 'MVP progress & next steps',
         body: [
-          'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. all 5 milestones delivered (M1-M5) — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
+          'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. All 5 milestones delivered (M1-M5) — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
           'NEXT — turning the current pilot into a live integration, adding the next design partner, and landing the first LOI from a team running Prova in production.',
           'LATER — the Mainnet migration, conditioned on that first real LOI arriving.',
         ],
@@ -206,7 +206,7 @@ const content = {
         n: 8,
         title: 'Avance del MVP y próximos pasos',
         body: [
-          'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. los 5 milestones entregados (M1-M5) — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
+          'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. Los 5 milestones entregados (M1-M5) — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
           'SIGUIENTE — convertir el piloto actual en integración en vivo, sumar el próximo design partner, y conseguir la primera LOI de un equipo corriendo Prova en producción.',
           'DESPUÉS — la migración a Mainnet, condicionada a que llegue esa primera LOI real.',
         ],
