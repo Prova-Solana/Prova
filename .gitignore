@@ -91,6 +91,9 @@ fernando.md
 CHECKPOINT-3-entrega.md
 MILESTONE-5-mvp-entrega.md
 
+# Working directory for local clones/scratch docs — nunca al repo público
+scratch/
+
 # Build artifacts
 packages/program/.anchor/
 
