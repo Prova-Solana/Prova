@@ -112,7 +112,7 @@ const content = {
           { name: 'Giovanny Amador', role: 'CEO & Technical Lead', photo: '/team/giovanny.png' },
         ],
         body: [
-          'Both graduated and certified from the Solana Builders Bootcamp — and it shows in what they\'ve already shipped: a production Anchor program, four published SDKs, and a real dependency fix upstream in the Anchor framework itself (PR #4960), not just coursework.',
+          'We both graduated and got certified from the Solana Builders Bootcamp — and it shows in what we\'ve already shipped: a production Anchor program, four published SDKs, and a real dependency fix upstream in the Anchor framework itself (PR #4960), not just coursework.',
         ],
       },
       {
@@ -219,7 +219,7 @@ const content = {
           { name: 'Giovanny Amador', role: 'CEO y Technical Lead', photo: '/team/giovanny.png' },
         ],
         body: [
-          'Ambos egresados y certificados del Solana Builders Bootcamp — y se nota en lo que ya construyeron: un programa Anchor en producción, cuatro SDKs publicados, y un fix real subido al propio framework Anchor (PR #4960), no solo el curso.',
+          'Ambos egresamos y nos certificamos del Solana Builders Bootcamp — y se nota en lo que ya construimos: un programa Anchor en producción, cuatro SDKs publicados, y un fix real subido al propio framework Anchor (PR #4960), no solo el curso.',
         ],
       },
       {
