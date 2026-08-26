@@ -34,7 +34,7 @@ function linkify(text: string) {
 const content = {
   EN: {
     cover: {
-      eyebrow: 'Pitch deck · Prova',
+      eyebrow: 'Pitch · Deck · Prova',
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:
@@ -105,7 +105,7 @@ const content = {
   },
   ES: {
     cover: {
-      eyebrow: 'Pitch deck · Prova',
+      eyebrow: 'Pitch · Deck · Prova',
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:

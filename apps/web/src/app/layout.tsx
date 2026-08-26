@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, Pixelify_Sans } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/providers';
-import { Navbar } from '@/components/layout/navbar';
-import { Footer } from '@/components/layout/footer';
+import { SiteChrome } from '@/components/layout/site-chrome';
 
 const geist = Geist({
   subsets: ['latin'],
@@ -149,9 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Providers>
-          <Navbar />
-          <main id="main-content">{children}</main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </Providers>
         <script
           type="application/ld+json"

@@ -4,7 +4,7 @@ import { Fragment, useState } from 'react';
 import { Info } from 'lucide-react';
 import { useI18n } from '@/components/i18n-provider';
 
-const TOTAL = 10;
+const TOTAL = 11;
 
 /** Parses `[label](url)` markdown-style links inside a string into clickable spans. */
 function linkify(text: string) {
@@ -76,12 +76,18 @@ const content = {
       },
       {
         n: 6,
-        title: 'Evidence it exists today',
+        title: 'Technical evidence',
         bullets: [
           '4 packages published, Apache 2.0, verifiable right now on npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adapter for [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ on-chain actions, Prova instruments it rather than competing with it), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 26, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'Also listed on [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — Solana\'s hackathon and accelerator platform — under the Frontier track, category AI Platforms / Agents.',
           'Ecosystem contribution, not just consumption: [PR #4960 open against otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library, pending review.',
+        ],
+      },
+      {
+        n: 7,
+        title: 'Validation & traction',
+        bullets: [
           'Validated pilot with [wasiai.io](https://wasiai.io) (AI agent marketplace): Fernando (founder) validated the technical fit of the pilot and confirmed he\'ll pick it up when he resumes marketplace development — not a live integration yet.',
           'David Rivas (WayLearn mentor) integrated prova-agent-kit into a real Solana Agent Kit v2 agent running local models, and wrote it directly into his repo\'s README (Aug 24, 2026, in Spanish): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana" — translation: "integrates Prova\'s SDK as a fully functional attestation service on Solana\'s devnet." Source, re-verified live: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
           'Direct user validation (Google Form survey in the WayLearn community, Jul 31, 2026, small sample — n=4): 3 of 4 also use MCP (Claude/Cursor), not just Solana Agent Kit; all 3 open-ended answers to "what do you think Prova does?" were correct without over-explaining; all 3 who answered want to try the SDK on devnet and agreed to be quoted publicly by name. Segmentation insight from the same survey: the pain is sharpest where real money is at stake or a third party demands proof — that\'s exactly where go-to-market is focused (marketplaces, production agents, auditors), not the generic devnet explorer.',
@@ -89,14 +95,14 @@ const content = {
         ],
       },
       {
-        n: 7,
+        n: 8,
         title: 'Business model',
         body: [
           'Software-only SaaS, zero financial language (no fees/yield/APY): Free $0/mo (100 attestations), Builder $49/mo (10,000), Growth $499/mo (100,000), Enterprise custom (unlimited), plus pay-per-use at $0.01/query via x402 for the Explorer, no account or commitment required — the same agentic payment protocol already live in the Solana ecosystem via agentic.market.',
         ],
       },
       {
-        n: 8,
+        n: 9,
         title: 'MVP progress & next steps',
         body: [
           'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. All 5 milestones delivered (M1-M5) — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
@@ -105,7 +111,7 @@ const content = {
         ],
       },
       {
-        n: 9,
+        n: 10,
         title: 'Founding team',
         people: [
           { name: 'Monserrat Mendoza', role: 'COO & UX/UI', photo: '/team/monserrat.png' },
@@ -116,7 +122,7 @@ const content = {
         ],
       },
       {
-        n: 10,
+        n: 11,
         title: 'Ask / next step',
         body: [
           'Prova is asking for funding via Solana Foundation Grants to accelerate commercial validation and, eventually, the Mainnet migration — not just a green light, but concrete runway. It fits the product\'s real state: a technical MVP already live on Devnet since before the program, one design partner with real integration evidence (David Rivas) plus one validated pilot with an accepted design partner (wasiai.io), and a decision already made to wait for the first real LOI before moving Mainnet\'s timing — the grant is what sustains that runway while that validation arrives.',
@@ -183,12 +189,18 @@ const content = {
       },
       {
         n: 6,
-        title: 'Evidencia de que existe hoy',
+        title: 'Evidencia técnica',
         bullets: [
           '4 SDKs publicados, Apache 2.0, verificables ahora mismo en npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adaptador de [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ acciones on-chain, Prova lo instrumenta en vez de competir con él), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 26-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'También listado en [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — la plataforma de hackathons y aceleración de Solana — bajo el track Frontier, categoría AI Platforms / Agents.',
           'Contribución al ecosistema, no solo consumo: [PR #4960 abierto contra otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, pendiente de revisión.',
+        ],
+      },
+      {
+        n: 7,
+        title: 'Validación y tracción',
+        bullets: [
           'Piloto validado con [wasiai.io](https://wasiai.io) (marketplace de agentes): Fernando (fundador) validó el encaje técnico del piloto y confirmó que lo retoma cuando reactive el desarrollo del marketplace — todavía no es una integración en vivo.',
           'David Rivas (mentor WayLearn) integró prova-agent-kit en un agente real de Solana Agent Kit v2 con modelos locales, y lo dejó escrito directamente en el README de su repo (24-ago-2026): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana". Fuente, reverificada en vivo: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
           'Validación directa con usuarios (encuesta Google Form en la comunidad WayLearn, 31-jul-2026, muestra chica — n=4): 3 de 4 también usan MCP (Claude/Cursor), no solo Solana Agent Kit; las 3 respuestas abiertas a "¿qué crees que hace Prova?" fueron correctas sin sobre-explicar; los 3 que respondieron quieren probar el SDK en devnet y autorizaron ser citados públicamente con su nombre. Insight de segmentación de la misma encuesta: el dolor es más agudo donde hay dinero real circulando o un tercero exige pruebas — exactamente ahí es donde está enfocado el go-to-market (marketplaces, agentes en producción, auditores), no el explorador genérico de devnet.',
@@ -196,14 +208,14 @@ const content = {
         ],
       },
       {
-        n: 7,
+        n: 8,
         title: 'Modelo de negocio',
         body: [
           'Software-only SaaS, cero lenguaje financiero (nada de fees/yield/APY): Free $0/mes (100 atestaciones), Builder $49/mes (10,000), Growth $499/mes (100,000), Enterprise a medida (ilimitado), más pay-per-use a $0.01/query vía x402 para el Explorer, sin cuenta ni compromiso — el mismo protocolo de pagos agénticos ya vivo en el ecosistema Solana vía agentic.market.',
         ],
       },
       {
-        n: 8,
+        n: 9,
         title: 'Avance del MVP y próximos pasos',
         body: [
           'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. Los 5 milestones entregados (M1-M5) — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
@@ -212,7 +224,7 @@ const content = {
         ],
       },
       {
-        n: 9,
+        n: 10,
         title: 'Equipo fundador',
         people: [
           { name: 'Monserrat Mendoza', role: 'COO y UX/UI', photo: '/team/monserrat.png' },
@@ -223,7 +235,7 @@ const content = {
         ],
       },
       {
-        n: 10,
+        n: 11,
         title: 'Ask / siguiente paso',
         body: [
           'Prova pide financiamiento vía Solana Foundation Grants para acelerar validación comercial y, eventualmente, la migración a Mainnet — no un simple visto bueno, sino runway concreto. Encaja con el estado real del producto: MVP técnico ya vivo en Devnet desde antes del programa, un design partner con evidencia de integración real (David Rivas) más un piloto validado con un design partner que ya aceptó (wasiai.io), y una decisión ya tomada de esperar a la primera LOI real antes de mover el timing de Mainnet — el grant es lo que sostiene ese runway mientras esa validación llega.',
@@ -264,9 +276,9 @@ function PersonCard({ name, role, photo }: { name: string; role: string; photo: 
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex flex-col items-start gap-5">
       {failed ? (
-        <div className="flex h-20 w-20 shrink-0 items-center justify-center border border-border bg-primary/10 font-display text-lg text-primary">
+        <div className="flex h-40 w-40 shrink-0 items-center justify-center border border-border bg-primary/10 font-display text-4xl text-primary">
           {initials(name)}
         </div>
       ) : (
@@ -274,13 +286,13 @@ function PersonCard({ name, role, photo }: { name: string; role: string; photo: 
         <img
           src={photo}
           alt={name}
-          className="h-20 w-20 shrink-0 border border-border object-cover"
+          className="h-40 w-40 shrink-0 border border-border object-cover"
           onError={() => setFailed(true)}
         />
       )}
       <div>
-        <p className="font-display text-lg uppercase text-foreground">{name}</p>
-        <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{role}</p>
+        <p className="font-display text-2xl uppercase text-foreground">{name}</p>
+        <p className="mt-1 font-mono text-sm uppercase tracking-wider text-muted-foreground">{role}</p>
       </div>
     </div>
   );
