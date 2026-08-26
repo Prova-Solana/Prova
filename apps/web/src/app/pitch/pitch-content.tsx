@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Info } from 'lucide-react';
 import { useI18n } from '@/components/i18n-provider';
 
@@ -85,6 +85,7 @@ const content = {
         bullets: [
           '4 packages published, Apache 2.0, verifiable right now on npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adapter for [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ on-chain actions, Prova instruments it rather than competing with it), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 18, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          'Also listed on [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — Solana\'s hackathon and accelerator platform — under the Frontier track, category AI Platforms / Agents.',
           'Ecosystem contribution, not just consumption: [PR #4960 open against otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library, pending review.',
           'Validated pilot with [wasiai.io](https://wasiai.io) (AI agent marketplace): Fernando (founder) validated the technical fit of the pilot and confirmed he\'ll pick it up when he resumes marketplace development — not a live integration yet.',
           'David Rivas (WayLearn mentor) integrated prova-agent-kit into a real Solana Agent Kit v2 agent running local models, and wrote it directly into his repo\'s README (Aug 24, 2026, in Spanish): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana" — translation: "integrates Prova\'s SDK as a fully functional attestation service on Solana\'s devnet." Source, re-verified live: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
@@ -112,11 +113,11 @@ const content = {
         n: 9,
         title: 'Founding team',
         meta: '10 sec',
-        bullets: [
-          'Giovanny Amador — CEO & Technical Lead.',
-          'Monserrat Mendoza — COO & UX/UI.',
-          'Both graduated and certified from the Solana Builders Bootcamp.',
+        people: [
+          { name: 'Monserrat Mendoza', role: 'COO & UX/UI', photo: '/team/monserrat.png' },
+          { name: 'Giovanny Amador', role: 'CEO & Technical Lead', photo: '/team/giovanny.png' },
         ],
+        body: ['Both graduated and certified from the Solana Builders Bootcamp.'],
       },
       {
         n: 10,
@@ -204,6 +205,7 @@ const content = {
         bullets: [
           '4 SDKs publicados, Apache 2.0, verificables ahora mismo en npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adaptador de [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ acciones on-chain, Prova lo instrumenta en vez de competir con él), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 18-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          'También listado en [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — la plataforma de hackathons y aceleración de Solana — bajo el track Frontier, categoría AI Platforms / Agents.',
           'Contribución al ecosistema, no solo consumo: [PR #4960 abierto contra otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, pendiente de revisión.',
           'Piloto validado con [wasiai.io](https://wasiai.io) (marketplace de agentes): Fernando (fundador) validó el encaje técnico del piloto y confirmó que lo retoma cuando reactive el desarrollo del marketplace — todavía no es una integración en vivo.',
           'David Rivas (mentor WayLearn) integró prova-agent-kit en un agente real de Solana Agent Kit v2 con modelos locales, y lo dejó escrito directamente en el README de su repo (24-ago-2026): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana". Fuente, reverificada en vivo: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
@@ -231,11 +233,11 @@ const content = {
         n: 9,
         title: 'Equipo fundador',
         meta: '10 seg',
-        bullets: [
-          'Giovanny Amador — CEO y Technical Lead.',
-          'Monserrat Mendoza — COO y UX/UI.',
-          'Ambos egresados y certificados del Solana Builders Bootcamp.',
+        people: [
+          { name: 'Monserrat Mendoza', role: 'COO y UX/UI', photo: '/team/monserrat.png' },
+          { name: 'Giovanny Amador', role: 'CEO y Technical Lead', photo: '/team/giovanny.png' },
         ],
+        body: ['Ambos egresados y certificados del Solana Builders Bootcamp.'],
       },
       {
         n: 10,
@@ -272,6 +274,43 @@ const content = {
     },
   },
 } as const;
+
+function initials(name: string) {
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .map((w) => w[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+}
+
+/** Founder photo with a graceful fallback to initials while the real file isn't uploaded yet. */
+function PersonCard({ name, role, photo }: { name: string; role: string; photo: string }) {
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div className="flex items-center gap-4">
+      {failed ? (
+        <div className="flex h-20 w-20 shrink-0 items-center justify-center border border-border bg-primary/10 font-display text-lg text-primary">
+          {initials(name)}
+        </div>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element -- small static deck asset, no responsive/opt needs
+        <img
+          src={photo}
+          alt={name}
+          className="h-20 w-20 shrink-0 border border-border object-cover"
+          onError={() => setFailed(true)}
+        />
+      )}
+      <div>
+        <p className="font-display text-lg uppercase text-foreground">{name}</p>
+        <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{role}</p>
+      </div>
+    </div>
+  );
+}
 
 function SlideNumber({ n }: { n: number }) {
   return (
@@ -314,6 +353,13 @@ export function PitchContent() {
             </h2>
             {'meta' in s && s.meta && (
               <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-primary">{s.meta}</p>
+            )}
+            {'people' in s && s.people && (
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                {s.people.map((p) => (
+                  <PersonCard key={p.name} name={p.name} role={p.role} photo={p.photo} />
+                ))}
+              </div>
             )}
             {'body' in s && s.body && (
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
