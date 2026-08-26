@@ -38,7 +38,7 @@ const content = {
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:
-        'Every number in this deck is verified live against theprova.xyz, github.com/Prova-Solana/Prova, and the public npm registry — see landscape/PROVA-DEEP-DIVE.md for the exact source of each figure. Complete save for one item: a design partner\'s direct quote (see slide 05), pending his reply.',
+        'Every number in this deck is verified live against theprova.xyz, github.com/Prova-Solana/Prova, and the public npm registry. Complete save for one item: a design partner\'s direct quote (see slide 05), pending his reply.',
     },
     slides: [
       {
@@ -108,7 +108,7 @@ const content = {
       title: 'Transparency note — status of prior corrections',
       intro: 'Everything flagged as pending in earlier drafts of this document was resolved or correctly labeled by 2026-08-23:',
       items: [
-        { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live. Full detail in landscape/PROVA-DEEP-DIVE.md.' },
+        { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live.' },
         { label: 'Attestation count', text: '— corroborated (not exactly verified) via direct RPC, correct label already incorporated in slide 05.' },
         { label: 'Design partner repo', text: '— integration confirmed genuine via gh api, still not citable on its own without a written quote. Already requested directly, pending his reply.' },
       ],
@@ -121,7 +121,7 @@ const content = {
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:
-        'Cada número en este deck está verificado en vivo contra theprova.xyz, github.com/Prova-Solana/Prova y el registro público de npm — ver landscape/PROVA-DEEP-DIVE.md para la fuente exacta de cada dato. Completo salvo un solo punto: la cita directa de un design partner (ver slide 05), pendiente de su respuesta.',
+        'Cada número en este deck está verificado en vivo contra theprova.xyz, github.com/Prova-Solana/Prova y el registro público de npm. Completo salvo un solo punto: la cita directa de un design partner (ver slide 05), pendiente de su respuesta.',
     },
     slides: [
       {
@@ -191,7 +191,7 @@ const content = {
       title: 'Nota de transparencia — estado de las correcciones previas',
       intro: 'Todo lo marcado como pendiente en versiones anteriores de este documento ya se resolvió o etiquetó correctamente hacia el 2026-08-23:',
       items: [
-        { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo. Detalle completo en landscape/PROVA-DEEP-DIVE.md.' },
+        { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo.' },
         { label: 'Conteo de atestaciones', text: '— corroborado (no verificado exacto) vía RPC directo, etiqueta correcta ya incorporada en la slide 05.' },
         { label: 'Repo del design partner', text: '— integración confirmada genuina vía gh api, sigue sin ser citable por sí solo sin una cita escrita. Ya se le pidió directo — pendiente de su respuesta.' },
       ],
