@@ -38,7 +38,7 @@ const content = {
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:
-        'Every number in this deck is verified live against theprova.xyz, github.com/Prova-Solana/Prova, and the public npm registry. Complete save for one item: a design partner\'s direct quote (see slide 05), pending his reply.',
+        'Every number in this deck is verified live against theprova.xyz, github.com/Prova-Solana/Prova, and the public npm registry.',
     },
     slides: [
       {
@@ -69,16 +69,11 @@ const content = {
         meta: 'The block that carries the most weight in a technical review',
         bullets: [
           '4 packages published, Apache 2.0, verifiable right now on npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adapter for [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ on-chain actions, Prova instruments it rather than competing with it), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
-          '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 23, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 26, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'Ecosystem contribution, not just consumption: [PR #4960 open against otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library, pending review.',
           'Validated pilot with [wasiai.io](https://wasiai.io) (AI agent marketplace): Fernando (founder) validated the technical fit of the pilot and confirmed he\'ll pick it up when he resumes marketplace development — not a live integration yet. Technical proposal and dedicated page already live at [theprova.xyz/wasiai](https://www.theprova.xyz/wasiai).',
-        ],
-        pendingQuote: true,
-        pendingTitle: '⏳ Pending — design partner quote',
-        pendingBody:
-          'Reserved space for David Rivas\'s direct quote (early design partner, integrated prova-agent-kit into a real Solana Agent Kit v2 agent running local models — repo [github.com/DvdRivas/Solana-Agent-wProva](https://github.com/DvdRivas/Solana-Agent-wProva)). Requested directly; inserted here verbatim once it arrives, no paraphrasing.',
-        afterPending: [
-          'Traction in numbers, with an honest label: ~[111,821 attestations and 38 active agents](https://prova-api.fly.dev/api/v1/stats) — self-reported, corroborated by on-chain activity via direct RPC (getSignaturesForAddress against [the devnet program](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), bypassing public explorers that block automated fetches). The query confirms real, sustained activity of ~1 tx/minute since before July 2026, consistent with the order of magnitude of the figure — not an exact transaction-by-transaction match. Always presented with this label, never as "verified" without qualification.',
+          'David Rivas (early design partner) integrated prova-agent-kit into a real Solana Agent Kit v2 agent running local models, and wrote it directly into his repo\'s README (Aug 24, 2026, in Spanish): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana" — translation: "integrates Prova\'s SDK as a fully functional attestation service on Solana\'s devnet." Source, re-verified live: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
+          'Traction in numbers, with an honest label: ~[117,054 attestations and 38 active agents](https://prova-api.fly.dev/api/v1/stats) — self-reported, corroborated by on-chain activity via direct RPC (getSignaturesForAddress against [the devnet program](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), bypassing public explorers that block automated fetches). The query confirms real, sustained activity of ~1 tx/minute since before July 2026, consistent with the order of magnitude of the figure — not an exact transaction-by-transaction match. Always presented with this label, never as "verified" without qualification.',
         ],
       },
       {
@@ -103,7 +98,7 @@ const content = {
       items: [
         { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live.' },
         { label: 'Attestation count', text: '— corroborated (not exactly verified) via direct RPC, correct label already incorporated in slide 05.' },
-        { label: 'Design partner repo', text: '— integration confirmed genuine via gh api, still not citable on its own without a written quote. Already requested directly, pending his reply.' },
+        { label: 'Design partner repo', text: '— resolved 2026-08-26. He added the line himself to his repo\'s README (commit f25c6cb, Aug 24) — now cited directly in slide 05, re-verified live against the source before publishing.' },
       ],
       closing: 'None of these invalidate the product — they\'re precision corrections, applied before anyone asked.',
     },
@@ -114,7 +109,7 @@ const content = {
       title: 'Prova',
       tagline: '"A verifiable record of every AI agent action on Solana."',
       footnote:
-        'Cada número en este deck está verificado en vivo contra theprova.xyz, github.com/Prova-Solana/Prova y el registro público de npm. Completo salvo un solo punto: la cita directa de un design partner (ver slide 05), pendiente de su respuesta.',
+        'Cada número en este deck está verificado en vivo contra theprova.xyz, github.com/Prova-Solana/Prova y el registro público de npm.',
     },
     slides: [
       {
@@ -145,16 +140,11 @@ const content = {
         meta: 'El bloque que más pesa en una revisión técnica',
         bullets: [
           '4 SDKs publicados, Apache 2.0, verificables ahora mismo en npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adaptador de [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ acciones on-chain, Prova lo instrumenta en vez de competir con él), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
-          '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 23-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
+          '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 26-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'Contribución al ecosistema, no solo consumo: [PR #4960 abierto contra otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, pendiente de revisión.',
           'Piloto validado con [wasiai.io](https://wasiai.io) (marketplace de agentes): Fernando (fundador) validó el encaje técnico del piloto y confirmó que lo retoma cuando reactive el desarrollo del marketplace — todavía no es una integración en vivo. Propuesta técnica y página dedicada ya publicadas en [theprova.xyz/wasiai](https://www.theprova.xyz/wasiai).',
-        ],
-        pendingQuote: true,
-        pendingTitle: '⏳ Pendiente — cita de un design partner',
-        pendingBody:
-          'Espacio reservado para la cita directa de David Rivas (design partner temprano, integró prova-agent-kit en un agente real de Solana Agent Kit v2 con modelos locales — repo [github.com/DvdRivas/Solana-Agent-wProva](https://github.com/DvdRivas/Solana-Agent-wProva)). Pedida directamente; se inserta aquí tal cual llegue, sin parafrasear.',
-        afterPending: [
-          'Tracción en números, con etiqueta honesta: ~[111,821 atestaciones y 38 agentes activos](https://prova-api.fly.dev/api/v1/stats) — autoreportado, corroborado por actividad on-chain vía RPC directo (getSignaturesForAddress contra [el programa en devnet](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), sin pasar por exploradores públicos que bloquean fetch automatizado). La query confirma actividad real y sostenida de ~1 tx/minuto desde antes de julio de 2026, consistente con el orden de magnitud de la cifra — no un match exacto verificado transacción por transacción. Presentarla siempre con esta etiqueta, nunca como "verificado" sin más.',
+          'David Rivas (design partner temprano) integró prova-agent-kit en un agente real de Solana Agent Kit v2 con modelos locales, y lo dejó escrito directamente en el README de su repo (24-ago-2026): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana". Fuente, reverificada en vivo: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
+          'Tracción en números, con etiqueta honesta: ~[117,054 atestaciones y 38 agentes activos](https://prova-api.fly.dev/api/v1/stats) — autoreportado, corroborado por actividad on-chain vía RPC directo (getSignaturesForAddress contra [el programa en devnet](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), sin pasar por exploradores públicos que bloquean fetch automatizado). La query confirma actividad real y sostenida de ~1 tx/minuto desde antes de julio de 2026, consistente con el orden de magnitud de la cifra — no un match exacto verificado transacción por transacción. Presentarla siempre con esta etiqueta, nunca como "verificado" sin más.',
         ],
       },
       {
@@ -179,7 +169,7 @@ const content = {
       items: [
         { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo.' },
         { label: 'Conteo de atestaciones', text: '— corroborado (no verificado exacto) vía RPC directo, etiqueta correcta ya incorporada en la slide 05.' },
-        { label: 'Repo del design partner', text: '— integración confirmada genuina vía gh api, sigue sin ser citable por sí solo sin una cita escrita. Ya se le pidió directo — pendiente de su respuesta.' },
+        { label: 'Repo del design partner', text: '— resuelto 2026-08-26. Él mismo agregó la línea al README de su repo (commit f25c6cb, 24-ago), ahora citada directamente en la slide 05, reverificada en vivo contra la fuente antes de publicarla.' },
       ],
       closing: 'Ninguna de estas invalida el producto — son correcciones de precisión, aplicadas antes de que alguien preguntara.',
     },
@@ -237,19 +227,6 @@ export function PitchProContent() {
             {'bullets' in s && s.bullets && (
               <ul className="mt-6 list-disc space-y-3 pl-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {s.bullets.map((p, i) => (
-                  <li key={i}>{linkify(p)}</li>
-                ))}
-              </ul>
-            )}
-            {'pendingQuote' in s && s.pendingQuote && (
-              <div className="mt-6 border border-dashed border-muted-foreground/40 bg-muted/5 p-5">
-                <p className="font-pixel text-[10px] uppercase tracking-wider text-muted-foreground">{s.pendingTitle}</p>
-                <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground/70">{linkify(s.pendingBody)}</p>
-              </div>
-            )}
-            {'afterPending' in s && s.afterPending && (
-              <ul className="mt-6 list-disc space-y-3 pl-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {s.afterPending.map((p, i) => (
                   <li key={i}>{linkify(p)}</li>
                 ))}
               </ul>
