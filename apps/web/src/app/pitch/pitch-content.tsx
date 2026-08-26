@@ -100,7 +100,7 @@ const content = {
         title: 'MVP progress & next steps',
         body: [
           'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. 4 of 5 milestones delivered on time (M1-M4), M5 one day late — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
-          'NEXT — turning the wasiai.io pilot into a live integration, adding the next design partner beyond Rivas and wasiai, and landing the first LOI from a team running Prova in production.',
+          'NEXT — turning the current pilot into a live integration, adding the next design partner, and landing the first LOI from a team running Prova in production.',
           'LATER — the Mainnet migration, conditioned on that first real LOI arriving.',
         ],
       },
@@ -139,7 +139,7 @@ const content = {
       intro: 'Everything flagged as pending in earlier drafts of this document was resolved or correctly labeled by 2026-08-23:',
       items: [
         { label: 'Self-issued "JARGUS" badge', text: '— removed completely from the site (Aug 18, 2026), not renamed. Same standard applied below to the SAS/PDA fix.' },
-        { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live by this session. Full detail in landscape/PROVA-DEEP-DIVE.md.' },
+        { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live by this session.' },
         { label: 'Attestation count', text: '— corroborated (not exactly verified) via direct RPC, correct label already incorporated in slide 05.' },
         { label: 'Rivas\'s repo', text: '— resolved 2026-08-26. He added the line himself to his repo\'s README (commit f25c6cb, Aug 24) — now cited directly in slide 06, re-verified live against the source before publishing.' },
       ],
@@ -213,7 +213,7 @@ const content = {
         title: 'Avance del MVP y próximos pasos',
         body: [
           'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. 4 de 5 milestones entregados a tiempo (M1-M4), M5 con un día de retraso — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
-          'SIGUIENTE — convertir el piloto con wasiai.io en integración en vivo, sumar el próximo design partner más allá de Rivas y wasiai, y conseguir la primera LOI de un equipo corriendo Prova en producción.',
+          'SIGUIENTE — convertir el piloto actual en integración en vivo, sumar el próximo design partner, y conseguir la primera LOI de un equipo corriendo Prova en producción.',
           'DESPUÉS — la migración a Mainnet, condicionada a que llegue esa primera LOI real.',
         ],
       },
@@ -252,7 +252,7 @@ const content = {
       intro: 'Todo lo marcado como pendiente en versiones anteriores de este borrador ya se resolvió o etiquetó correctamente hacia el 2026-08-23:',
       items: [
         { label: 'Badge autoemitido "JARGUS"', text: '— eliminado por completo del sitio (18-ago-2026), no renombrado. Mismo estándar aplicado abajo en el fix de SAS/PDA.' },
-        { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo por esta sesión. Detalle completo en landscape/PROVA-DEEP-DIVE.md.' },
+        { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo por esta sesión.' },
         { label: 'Conteo de atestaciones', text: '— corroborado (no verificado exacto) vía RPC directo, etiqueta correcta ya incorporada en la slide 05.' },
         { label: 'Repo de Rivas', text: '— resuelto 2026-08-26. Él mismo agregó la línea al README de su repo (commit f25c6cb, 24-ago), ahora citada directamente en la slide 06, reverificada en vivo contra la fuente antes de publicarla.' },
       ],
