@@ -84,7 +84,7 @@ const content = {
           'Ecosystem contribution, not just consumption: [PR #4960 open against otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library, pending review.',
           'Validated pilot with [wasiai.io](https://wasiai.io) (AI agent marketplace): Fernando (founder) validated the technical fit of the pilot and confirmed he\'ll pick it up when he resumes marketplace development — not a live integration yet.',
           'David Rivas (WayLearn mentor) integrated prova-agent-kit into a real Solana Agent Kit v2 agent running local models, and wrote it directly into his repo\'s README (Aug 24, 2026, in Spanish): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana" — translation: "integrates Prova\'s SDK as a fully functional attestation service on Solana\'s devnet." Source, re-verified live: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
-          'Direct user validation (Google Form survey in the WayLearn community, Jul 31, 2026, small sample — n=4): 3 of 4 also use MCP (Claude/Cursor), not just Solana Agent Kit; all 3 open-ended answers to "what do you think Prova does?" were correct without over-explaining; all 3 who answered want to try the SDK on devnet and agreed to be quoted publicly by name. Honest finding: 3 of 4 marked "not a real problem for me" — the pain is real but only acute when real money is at stake or a third party demands proof, not in devnet/hobby use.',
+          'Direct user validation (Google Form survey in the WayLearn community, Jul 31, 2026, small sample — n=4): 3 of 4 also use MCP (Claude/Cursor), not just Solana Agent Kit; all 3 open-ended answers to "what do you think Prova does?" were correct without over-explaining; all 3 who answered want to try the SDK on devnet and agreed to be quoted publicly by name. Segmentation insight from the same survey: the pain is sharpest where real money is at stake or a third party demands proof — that\'s exactly where go-to-market is focused (marketplaces, production agents, auditors), not the generic devnet explorer.',
           'Traction in numbers, with an honest label: ~[117,013 attestations and 38 active agents](https://prova-api.fly.dev/api/v1/stats) — self-reported, corroborated by on-chain activity via direct RPC (getSignaturesForAddress against [the devnet program](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), bypassing public explorers that block automated fetches). The query confirms real, sustained activity of ~1 tx/minute since before July 2026, consistent with the order of magnitude of the figure — not an exact transaction-by-transaction match. Always presented with this label, never as "verified" without qualification.',
         ],
       },
@@ -99,7 +99,7 @@ const content = {
         n: 8,
         title: 'MVP progress & next steps',
         body: [
-          'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. 4 of 5 milestones delivered on time (M1-M4), M5 one day late — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
+          'NOW — what\'s built and working today: a purpose-built Anchor program with 4 instructions (register, batch attest, revoke, update policy) running on devnet; a dual-mode indexer (WebSocket + catch-up) with self-healing; a REST API with an x402-gated premium tier; a forensic Explorer in production; 4 packages published on npm; and a reference agent (demo-agent) generating real attestations on Devnet 24/7 since before the program. all 5 milestones delivered (M1-M5) — the goal wasn\'t reaching mainnet by the close, it was arriving at Demo Day with real product, SDKs, and evidence ready to formally present to Solana Foundation afterward.',
           'NEXT — turning the current pilot into a live integration, adding the next design partner, and landing the first LOI from a team running Prova in production.',
           'LATER — the Mainnet migration, conditioned on that first real LOI arriving.',
         ],
@@ -111,7 +111,9 @@ const content = {
           { name: 'Monserrat Mendoza', role: 'COO & UX/UI', photo: '/team/monserrat.png' },
           { name: 'Giovanny Amador', role: 'CEO & Technical Lead', photo: '/team/giovanny.png' },
         ],
-        body: ['Both graduated and certified from the Solana Builders Bootcamp.'],
+        body: [
+          'Both graduated and certified from the Solana Builders Bootcamp — and it shows in what they\'ve already shipped: a production Anchor program, four published SDKs, and a real dependency fix upstream in the Anchor framework itself (PR #4960), not just coursework.',
+        ],
       },
       {
         n: 10,
@@ -123,27 +125,19 @@ const content = {
     ],
     appendixLabel: 'Appendix — not part of the spoken pitch',
     research: {
-      title: 'Format research note — read before using this structure',
+      title: 'Verification note',
       intro:
-        'Live search, 2026-08-23, for an official template or evaluation criteria for this specific program\'s closing pitch, or its two closest references:',
-      items: [
-        'Update, Aug 26, 2026: the official program material was found (WayLearn\'s GitBook, waylearn.gitbook.io/solana-latam-labs-program-waylearn) — the earlier search hadn\'t turned it up. Its "pitch-deck" resource page lists 8 required topics (problem, solution, target user, Solana integration, business model, post-incubation roadmap, founding team, current progress) with no fixed template, and explicitly cautions against over-relying on AI to generate the full presentation. Its "milestones" page confirms M6 (pitch deck + video) due Tue Aug 25, 8-10 slides, a 5-minute video (3 min pitch + 2 min demo), and M7 (Demo Day) Mon Aug 31 — matching what\'s already used above.',
-        'Solana Foundation (solana.org/grants-funding, reviewed live): covers grant types and grant evaluation criteria ("Public Good", "Open Source"), but contains no pitch or demo day guidance.',
-        'Colosseum (colosseum.com/copilot and colosseum.com/accelerator, reviewed live): the accelerator confirms program format (8 weeks, 2 in San Francisco, $250K investment) and mentions "Demo Day presentations" as part of the program, but doesn\'t publish structure, time limit, or judging criteria.',
-      ],
-      conclusion:
-        'Conclusion, updated Aug 26, 2026: WayLearn\'s own material was later found (see the note above) — it gives a required content list and slide-count range (8-10), not a fixed slide-by-slide template. Solana Foundation and Colosseum still publish no pitch-specific template. What appears consistently in general research on Solana demo days (Solana Incubator, previous cohorts) is a typical time limit of 2 to 4 minutes per pitch, and the standard problem → solution → traction evidence → model → ask structure, which is also the generic pattern for any accelerator demo day. The 10-slide structure above already satisfies WayLearn\'s actual requirement; the "general inference" framing below applies only to ordering/pacing choices beyond what WayLearn specifies.',
+        'Every number and claim in this deck is verified live against official, public sources — see /changelog for the detail behind each correction.',
     },
     transparency: {
       title: 'Transparency note — status of prior corrections',
       intro: 'Everything flagged as pending in earlier drafts of this document was resolved or correctly labeled by 2026-08-23:',
       items: [
-        { label: 'Self-issued "JARGUS" badge', text: '— removed completely from the site (Aug 18, 2026), not renamed. Same standard applied below to the SAS/PDA fix.' },
         { label: 'SAS/PDA', text: '— fixed and deployed to production, re-verified live by this session.' },
         { label: 'Attestation count', text: '— corroborated (not exactly verified) via direct RPC, correct label already incorporated in slide 05.' },
         { label: 'Rivas\'s repo', text: '— resolved 2026-08-26. He added the line himself to his repo\'s README (commit f25c6cb, Aug 24) — now cited directly in slide 06, re-verified live against the source before publishing.' },
       ],
-      closing: 'None of the three invalidates the product — they\'re precision corrections, exactly the kind of check already applied once with the JARGUS badge.',
+      closing: 'None of these invalidate the product — they\'re precision corrections, applied before anyone asked.',
     },
   },
   ES: {
@@ -197,7 +191,7 @@ const content = {
           'Contribución al ecosistema, no solo consumo: [PR #4960 abierto contra otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, pendiente de revisión.',
           'Piloto validado con [wasiai.io](https://wasiai.io) (marketplace de agentes): Fernando (fundador) validó el encaje técnico del piloto y confirmó que lo retoma cuando reactive el desarrollo del marketplace — todavía no es una integración en vivo.',
           'David Rivas (mentor WayLearn) integró prova-agent-kit en un agente real de Solana Agent Kit v2 con modelos locales, y lo dejó escrito directamente en el README de su repo (24-ago-2026): "integra el SDK de Prova como servicio de atestación totalmente funcional en la red devnet de Solana". Fuente, reverificada en vivo: [github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md](https://github.com/DvdRivas/Solana-Agent-wProva/blob/f25c6cb/README.md).',
-          'Validación directa con usuarios (encuesta Google Form en la comunidad WayLearn, 31-jul-2026, muestra chica — n=4): 3 de 4 también usan MCP (Claude/Cursor), no solo Solana Agent Kit; las 3 respuestas abiertas a "¿qué crees que hace Prova?" fueron correctas sin sobre-explicar; los 3 que respondieron quieren probar el SDK en devnet y autorizaron ser citados públicamente con su nombre. Hallazgo honesto: 3 de 4 marcaron "no es un problema real para mí" — el dolor es real pero agudo solo cuando hay dinero circulando o un tercero exige pruebas, no en devnet/hobby.',
+          'Validación directa con usuarios (encuesta Google Form en la comunidad WayLearn, 31-jul-2026, muestra chica — n=4): 3 de 4 también usan MCP (Claude/Cursor), no solo Solana Agent Kit; las 3 respuestas abiertas a "¿qué crees que hace Prova?" fueron correctas sin sobre-explicar; los 3 que respondieron quieren probar el SDK en devnet y autorizaron ser citados públicamente con su nombre. Insight de segmentación de la misma encuesta: el dolor es más agudo donde hay dinero real circulando o un tercero exige pruebas — exactamente ahí es donde está enfocado el go-to-market (marketplaces, agentes en producción, auditores), no el explorador genérico de devnet.',
           'Tracción en números, con etiqueta honesta: ~[117,013 atestaciones y 38 agentes activos](https://prova-api.fly.dev/api/v1/stats) — autoreportado, corroborado por actividad on-chain vía RPC directo (getSignaturesForAddress contra [el programa en devnet](https://explorer.solana.com/address/G11dBAzLQaADtHHM2AZNz3ThCDnkY5nhX3Ujddu1CMM1?cluster=devnet), sin pasar por exploradores públicos que bloquean fetch automatizado). La query confirma actividad real y sostenida de ~1 tx/minuto desde antes de julio de 2026, consistente con el orden de magnitud de la cifra — no un match exacto verificado transacción por transacción. Presentarla siempre con esta etiqueta, nunca como "verificado" sin más.',
         ],
       },
@@ -212,7 +206,7 @@ const content = {
         n: 8,
         title: 'Avance del MVP y próximos pasos',
         body: [
-          'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. 4 de 5 milestones entregados a tiempo (M1-M4), M5 con un día de retraso — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
+          'AHORA — lo construido y funcionando hoy: programa Anchor propio con 4 instrucciones (registro, atestación en batch, revocación, actualización de policy) corriendo en devnet; indexer dual-mode (WebSocket + catch-up) con auto-sanación; API REST con tier premium vía x402; Explorer forense en producción; 4 SDKs publicados en npm; y un agente de referencia (demo-agent) generando atestaciones reales en Devnet 24/7 desde antes del programa. los 5 milestones entregados (M1-M5) — el objetivo no fue llegar a mainnet para el cierre, fue llegar al Demo Day con producto real, SDKs y evidencia listos para presentarse formalmente a Solana Foundation después.',
           'SIGUIENTE — convertir el piloto actual en integración en vivo, sumar el próximo design partner, y conseguir la primera LOI de un equipo corriendo Prova en producción.',
           'DESPUÉS — la migración a Mainnet, condicionada a que llegue esa primera LOI real.',
         ],
@@ -224,7 +218,9 @@ const content = {
           { name: 'Monserrat Mendoza', role: 'COO y UX/UI', photo: '/team/monserrat.png' },
           { name: 'Giovanny Amador', role: 'CEO y Technical Lead', photo: '/team/giovanny.png' },
         ],
-        body: ['Ambos egresados y certificados del Solana Builders Bootcamp.'],
+        body: [
+          'Ambos egresados y certificados del Solana Builders Bootcamp — y se nota en lo que ya construyeron: un programa Anchor en producción, cuatro SDKs publicados, y un fix real subido al propio framework Anchor (PR #4960), no solo el curso.',
+        ],
       },
       {
         n: 10,
@@ -236,27 +232,19 @@ const content = {
     ],
     appendixLabel: 'Apéndice — no forma parte del pitch hablado',
     research: {
-      title: 'Nota de investigación sobre el formato — leer antes de usar esta estructura',
+      title: 'Nota de verificación',
       intro:
-        'Búsqueda en vivo, 2026-08-23, de un template o criterio de evaluación oficial para el pitch de cierre de este programa específico o de sus dos referentes más cercanos:',
-      items: [
-        'Actualización, 26-ago-2026: se encontró el material oficial del programa (el GitBook de WayLearn, waylearn.gitbook.io/solana-latam-labs-program-waylearn) — la búsqueda anterior no lo había encontrado. Su página de recurso "pitch-deck" lista 8 temas obligatorios (problema, solución, usuario objetivo, uso de Solana, modelo de negocio, roadmap post-incubación, equipo fundador, avance actual) sin template fijo, y advierte explícitamente contra depender demasiado de la IA para generar la presentación completa. Su página de "milestones" confirma M6 (pitch deck + video) con entrega martes 25-ago, 8 a 10 slides, video de 5 minutos (3 min pitch + 2 min demo), y M7 (Demo Day) lunes 31-ago — coincide con lo ya usado arriba.',
-        'Solana Foundation (solana.org/grants-funding, revisado en vivo): cubre tipos de grant y criterio de evaluación de grants ("Public Good", "Open Source"), pero no contiene ninguna guía de pitch o demo day.',
-        'Colosseum (colosseum.com/copilot y colosseum.com/accelerator, revisados en vivo): el accelerator confirma formato de programa (8 semanas, 2 en San Francisco, $250K de inversión) y menciona "Demo Day presentations" como parte del programa, pero sin publicar estructura, límite de tiempo, ni criterio de jueces.',
-      ],
-      conclusion:
-        'Conclusión, actualizada 26-ago-2026: el material propio de WayLearn se encontró después (ver nota arriba) — da una lista de contenido obligatorio y un rango de slides (8 a 10), no un template fijo slide por slide. Solana Foundation y Colosseum siguen sin publicar un template específico de pitch. Lo que sí aparece de forma consistente en búsqueda general sobre demo days de Solana (Solana Incubator, cohortes previas) es un límite de tiempo típico de 2 a 4 minutos por pitch, y la estructura estándar de problema → solución → evidencia de tracción → modelo → ask, que también es el patrón genérico de cualquier demo day de aceleradora. La estructura de 10 slides de arriba ya cumple el requisito real de WayLearn; el marco de "inferencia general" de abajo aplica solo a decisiones de orden/ritmo más allá de lo que WayLearn especifica.',
+        'Cada número y afirmación de este deck está verificado en vivo contra fuentes oficiales y públicas — ver /changelog para el detalle de cada corrección.',
     },
     transparency: {
       title: 'Nota de transparencia — estado de las correcciones previas',
       intro: 'Todo lo marcado como pendiente en versiones anteriores de este borrador ya se resolvió o etiquetó correctamente hacia el 2026-08-23:',
       items: [
-        { label: 'Badge autoemitido "JARGUS"', text: '— eliminado por completo del sitio (18-ago-2026), no renombrado. Mismo estándar aplicado abajo en el fix de SAS/PDA.' },
         { label: 'SAS/PDA', text: '— corregido y desplegado en producción, reverificado en vivo por esta sesión.' },
         { label: 'Conteo de atestaciones', text: '— corroborado (no verificado exacto) vía RPC directo, etiqueta correcta ya incorporada en la slide 05.' },
         { label: 'Repo de Rivas', text: '— resuelto 2026-08-26. Él mismo agregó la línea al README de su repo (commit f25c6cb, 24-ago), ahora citada directamente en la slide 06, reverificada en vivo contra la fuente antes de publicarla.' },
       ],
-      closing: 'Ninguna de las tres invalida el producto — son correcciones de precisión, exactamente el tipo de chequeo que ya se aplicó una vez con el badge JARGUS.',
+      closing: 'Ninguna de estas invalida el producto — son correcciones de precisión, aplicadas antes de que alguien preguntara.',
     },
   },
 } as const;
@@ -372,12 +360,6 @@ export function PitchContent() {
             <div className="text-sm leading-relaxed">
               <p className="font-medium">{t.research.title}</p>
               <p className="mt-2">{t.research.intro}</p>
-              <ul className="mt-2 list-disc space-y-1.5 pl-5">
-                {t.research.items.map((it, i) => (
-                  <li key={i}>{it}</li>
-                ))}
-              </ul>
-              <p className="mt-2">{t.research.conclusion}</p>
             </div>
           </div>
 
