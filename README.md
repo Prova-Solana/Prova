@@ -2,7 +2,7 @@
 
 **Cryptographic receipts for the agentic internet — behavior attestation layer for AI agents on Solana.**
 
-[![CI](https://github.com/Eras256/Prova/actions/workflows/ci.yml/badge.svg)](https://github.com/Eras256/Prova/actions/workflows/ci.yml)
+[![CI](https://github.com/Prova-Solana/Prova/actions/workflows/ci.yml/badge.svg)](https://github.com/Prova-Solana/Prova/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/prova-agent-sdk?label=prova-agent-sdk)](https://www.npmjs.com/package/prova-agent-sdk)
 [![npm](https://img.shields.io/npm/v/prova-agent-kit?label=prova-agent-kit)](https://www.npmjs.com/package/prova-agent-kit)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](./LICENSE)
@@ -12,6 +12,13 @@ Prova wraps any AI agent action in a signed, on-chain receipt — verifiable by 
 > **Prova vs. [SAS](https://attest.solana.com):** SAS provides generic attestation rails. Prova is the full **agent-accountability stack** on top of that concept — an SDK that wraps your agent, an agent/operator model, typed action receipts (ToolCall, ModelInvocation, Decision…), an explorer, and verification. Prova runs its own Anchor program (not the SAS on-chain program).
 
 > **Disclaimer:** Prova is an independent software project and is NOT affiliated with, endorsed by, or sponsored by the Solana Foundation. Solana® is a registered trademark of the Solana Foundation.
+
+## Recognition
+
+- 🥇 **1st place, Mexico** — Dev3Pack Global Hackathon (May 2026)
+- 🎓 **Graduated** — Solana Latam Labs Program, organized by WayLearn with support from Solana Foundation (Jun-Aug 2026)
+- 🏛️ Built through two Colosseum hackathon cycles: [Prova](https://colosseum.com/arena/projects/explore/prova-1), and earlier [Oraculo](https://colosseum.com/arena/projects/explore/oraculo) at the Solana Cypherpunk Hackathon (Sep-Oct 2025)
+- 🔧 Contributing upstream to Anchor itself: [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960) — open for review
 
 ---
 
