@@ -18,7 +18,7 @@ Prova wraps any AI agent action in a signed, on-chain receipt — verifiable by 
 - 🥇 **1st place, Mexico** — Dev3Pack Global Hackathon (May 2026)
 - 🎓 **Graduated** — Solana Latam Labs Program, organized by WayLearn with support from Solana Foundation (Jun-Aug 2026)
 - 🏛️ Built through two Colosseum hackathon cycles: [Prova](https://colosseum.com/arena/projects/explore/prova-1), and earlier [Oraculo](https://colosseum.com/arena/projects/explore/oraculo) at the Solana Cypherpunk Hackathon (Sep-Oct 2025)
-- 🔧 Contributing upstream to Anchor itself: [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960) — open for review
+- 🔧 Contributing upstream to Anchor itself: [otter-sec/anchor#4960](https://github.com/otter-sec/anchor/pull/4960) — merged into otter-sec/anchor master
 
 ---
 
