@@ -81,7 +81,7 @@ const content = {
           '4 packages published, Apache 2.0, verifiable right now on npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adapter for [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ on-chain actions, Prova instruments it rather than competing with it), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Public repo](https://github.com/Prova-Solana/Prova), actively maintained, [last commit Aug 26, 2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'Also listed on [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — Solana\'s hackathon and accelerator platform — under the Frontier track, category AI Platforms / Agents.',
-          'Ecosystem contribution, not just consumption: [PR #4960 merged into otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (the Anchor framework) — a real dependency-bug fix (heck/edition2024) found through our own production use of the library.',
+          'Ecosystem contribution, not just consumption: three PRs merged into otter-sec/anchor (the Anchor framework): [#4960](https://github.com/otter-sec/anchor/pull/4960), a dependency-bug fix (heck/edition2024) found through our own production use of the library, plus [#5131](https://github.com/otter-sec/anchor/pull/5131) and [#5132](https://github.com/otter-sec/anchor/pull/5132), two smaller IDL and InitSpace improvements.',
         ],
       },
       {
@@ -194,7 +194,7 @@ const content = {
           '4 SDKs publicados, Apache 2.0, verificables ahora mismo en npm: [prova-agent-sdk v0.1.7](https://www.npmjs.com/package/prova-agent-sdk), [prova-agent-kit v0.1.5](https://www.npmjs.com/package/prova-agent-kit) (adaptador de [Solana Agent Kit v2](https://github.com/sendaifun/solana-agent-kit) — 1.7k stars, 60+ acciones on-chain, Prova lo instrumenta en vez de competir con él), [prova-mcp-server v0.1.0](https://www.npmjs.com/package/prova-mcp-server), [prova-plugin-eliza v0.1.2](https://www.npmjs.com/package/prova-plugin-eliza).',
           '[Repo público](https://github.com/Prova-Solana/Prova) activo, [último commit 26-ago-2026](https://github.com/Prova-Solana/Prova/commits/main).',
           'También listado en [Colosseum](https://colosseum.com/arena/projects/explore/prova-1) — la plataforma de hackathons y aceleración de Solana — bajo el track Frontier, categoría AI Platforms / Agents.',
-          'Contribución al ecosistema, no solo consumo: [PR #4960 mergeado en otter-sec/anchor](https://github.com/otter-sec/anchor/pull/4960) (el framework Anchor) — fix real de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción.',
+          'Contribución al ecosistema, no solo consumo: tres PRs mergeados en otter-sec/anchor (el framework Anchor): [#4960](https://github.com/otter-sec/anchor/pull/4960), fix de un bug de dependencias (heck/edition2024) encontrado usando la librería en producción, más [#5131](https://github.com/otter-sec/anchor/pull/5131) y [#5132](https://github.com/otter-sec/anchor/pull/5132), dos mejoras menores de IDL e InitSpace.',
         ],
       },
       {
