@@ -35,13 +35,13 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # pnpm's own --filter bypasses turbo's dependsOn graph, so workspace libs
-      # consumed at runtime (not just as devDependencies) need an explicit build
-      # before the tests that import them: @prova/core (tests/integration) and
-      # @prova/db (apps/api).
-      - run: pnpm build --filter=@prova/core --filter=@prova/db
+      # Call turbo directly, not the root "test" script: that script is
+      # "dotenv -e .env.local -- turbo run test", and .env.local doesn't
+      # exist in CI. Going through turbo (instead of pnpm's own --filter,
+      # which runs each package's script directly) keeps turbo's pipeline
+      # ("test" depends on "^build") so workspace libs get built first.
       # @prova/program runs 'anchor test', which needs Solana + Anchor: covered by the anchor-test job
-      - run: pnpm test --filter='!@prova/program'
+      - run: pnpm turbo run test --filter='!@prova/program'
 
   build:
     name: Build All Packages
