@@ -2,7 +2,6 @@
 
 **Cryptographic receipts for the agentic internet — behavior attestation layer for AI agents on Solana.**
 
-[![CI](https://github.com/Prova-Solana/Prova/actions/workflows/ci.yml/badge.svg)](https://github.com/Prova-Solana/Prova/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/prova-agent-sdk?label=prova-agent-sdk)](https://www.npmjs.com/package/prova-agent-sdk)
 [![npm](https://img.shields.io/npm/v/prova-agent-kit?label=prova-agent-kit)](https://www.npmjs.com/package/prova-agent-kit)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue)](./LICENSE)
