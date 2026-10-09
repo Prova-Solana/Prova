@@ -35,6 +35,11 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # pnpm's own --filter bypasses turbo's dependsOn graph, so workspace libs
+      # consumed at runtime (not just as devDependencies) need an explicit build
+      # before the tests that import them: @prova/core (tests/integration) and
+      # @prova/db (apps/api).
+      - run: pnpm build --filter=@prova/core --filter=@prova/db
       # @prova/program runs 'anchor test', which needs Solana + Anchor: covered by the anchor-test job
       - run: pnpm test --filter='!@prova/program'
 
