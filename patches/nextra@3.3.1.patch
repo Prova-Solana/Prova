@@ -1,0 +1,13 @@
+diff --git a/dist/server/webpack-plugins/nextra-search.js b/dist/server/webpack-plugins/nextra-search.js
+index 6066612e2973274d5c9a76004e0b136d928cafb7..cf33b0ace70daa71b79567099ef26c6c2057fdf7 100644
+--- a/dist/server/webpack-plugins/nextra-search.js
++++ b/dist/server/webpack-plugins/nextra-search.js
+@@ -2,7 +2,7 @@ import { createRequire } from "module";
+ import { IS_PRODUCTION } from "../constants.js";
+ const require2 = createRequire(import.meta.url);
+ const pkg = require2("next/dist/compiled/webpack/webpack.js");
+-pkg.init();
++if (typeof pkg.init === "function") pkg.init();
+ const { sources, webpack } = (
+   // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+   pkg
