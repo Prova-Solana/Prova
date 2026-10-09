@@ -19,6 +19,11 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter=@prova/web... build
+        env:
+          # Placeholder only, never a real app id/secret: without it,
+          # Providers.tsx skips rendering PrivyProvider and the build fails
+          # prerendering any page that calls Privy's useWallets outside it.
+          NEXT_PUBLIC_PRIVY_APP_ID: ci-build-placeholder-0000
       - name: Install Playwright browsers
         run: pnpm --filter=@prova/tests-e2e exec playwright install --with-deps chromium
       - name: Run E2E tests
