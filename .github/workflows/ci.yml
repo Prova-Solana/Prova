@@ -91,6 +91,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Generate local provider wallet
+        run: solana-keygen new --no-bip39-passphrase --silent -o ~/.config/solana/prova-deployer.json
       - name: Run Anchor tests
         run: pnpm --filter=@prova/program test
 
